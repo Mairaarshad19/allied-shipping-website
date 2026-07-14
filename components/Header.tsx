@@ -35,40 +35,41 @@ export default function Header() {
           href="/"
           className="text-xl font-semibold tracking-tight text-navy-primary"
         >
-          Allied Shipping
+          Allied Shipping Agency
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-body transition-colors hover:text-navy-primary"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        {/* Desktop nav + buttons */}
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-8">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-body transition-colors hover:text-navy-primary"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Desktop contact buttons */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="tel:04236293017"
-            className="inline-flex items-center gap-2 rounded-md border border-navy-primary px-4 py-2 text-sm font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"
-          >
-            <Phone size={16} />
-            Call
-          </a>
-          <a
-            href="https://wa.me/923286920284"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-navy-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-navy-secondary"
-          >
-            <MessageCircle size={16} />
-            WhatsApp
-          </a>
+          <div className="flex items-center gap-2 pl-2 border-l border-border">
+            <a
+              href="tel:04236293017"
+              className="inline-flex items-center gap-1.5 rounded-md border border-navy-primary px-3 py-1.5 text-xs font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"
+            >
+              <Phone size={14} />
+              Call
+            </a>
+            <a
+              href="https://wa.me/923286920284"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md bg-navy-primary px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-navy-secondary"
+            >
+              <MessageCircle size={14} />
+              WhatsApp
+            </a>
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -99,7 +100,7 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
-            <div className="flex flex-col gap-3 pt-2">
+            <div className="flex flex-col gap-3 pt-2 border-t border-border">
               <a
                 href="tel:04236293017"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-navy-primary px-4 py-3 text-sm font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"

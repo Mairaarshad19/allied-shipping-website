@@ -26,14 +26,14 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section className="bg-white py-16 md:py-24 lg:py-28">
+    <section className="bg-white py-12 md:py-16 lg:py-20">
       <Container>
         {/* Section header */}
-        <div className="mb-12 md:mb-16 max-w-xl">
+        <div className="mb-8 md:mb-12 max-w-xl">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
             Our Services
           </h2>
-          <p className="mt-4 text-base md:text-lg text-body leading-relaxed">
+          <p className="mt-3 text-base md:text-lg text-body leading-relaxed">
             Reliable cargo booking solutions tailored for exporters and
             importers.
           </p>
@@ -47,19 +47,19 @@ export default function Services() {
             return (
               <div
                 key={service.title}
-                className="flex items-start gap-5 rounded-xl border border-border bg-white px-6 py-8 shadow-sm transition-shadow duration-200 hover:shadow-md min-h-[120px]"
+                className="flex items-start gap-4 rounded-xl border border-border bg-white px-5 py-5 shadow-sm transition-shadow duration-200 hover:shadow-md"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-primary/5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
                   <Icon
-                    className="h-6 w-6 text-navy-primary"
+                    className="h-5 w-5 text-navy-primary"
                     strokeWidth={1.5}
                   />
                 </div>
                 <div className="pt-0.5">
-                  <h3 className="text-lg font-semibold text-heading">
+                  <h3 className="text-base font-semibold text-heading">
                     {service.title}
                   </h3>
-                  <p className="mt-1.5 text-sm text-body leading-relaxed">
+                  <p className="mt-1 text-sm text-body leading-relaxed">
                     {service.description}
                   </p>
                 </div>

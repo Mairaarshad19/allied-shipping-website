@@ -22,8 +22,8 @@ export default function Footer() {
   return (
     <footer className="bg-navy-primary">
       {/* Main footer */}
-      <Container className="py-16 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+      <Container className="py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Column 1 — Brand */}
           <div className="flex flex-col gap-4">
             <Link

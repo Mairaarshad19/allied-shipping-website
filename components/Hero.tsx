@@ -1,13 +1,11 @@
-import Link from "next/link";
-import { Phone, MessageCircle } from "lucide-react";
 import Container from "./Container";
 
 export default function Hero() {
   return (
     <section className="bg-white relative">
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20 md:py-28 lg:py-36">
+      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center py-14 md:py-20 lg:py-24">
         {/* Left content */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-5">
           {/* Gold label */}
           <span className="inline-block w-fit rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-gold">
             25+ Years of Experience
@@ -22,29 +20,8 @@ export default function Hero() {
           <p className="text-base md:text-lg leading-relaxed text-body max-w-lg">
             Allied Shipping Agency is a trusted freight forwarding and cargo
             booking partner based in Lahore, Pakistan. With 25+ years of
-            experience, we specialise in sea and air freight across China,
-            Malaysia, and Dubai.
+            experience, we specialise in sea(LCL, FCL) and air freight globally.
           </p>
-
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Link
-              href="tel:04236293017"
-              className="inline-flex items-center gap-2.5 rounded-lg bg-navy-primary px-7 py-3.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-navy-secondary hover:shadow-md"
-            >
-              <Phone size={18} />
-              Call Now
-            </Link>
-            <Link
-              href="https://wa.me/923286920284"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-lg border-2 border-navy-primary px-7 py-3.5 text-sm font-medium text-navy-primary transition-all hover:bg-navy-primary hover:text-white hover:shadow-md"
-            >
-              <MessageCircle size={18} />
-              WhatsApp
-            </Link>
-          </div>
         </div>
 
         {/* Right image placeholder */}

@@ -11,47 +11,47 @@ const CONTACTS = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "0328-6920284",
-    href: "https://wa.me/923286920284",
+    value: "0300-4018802",
+    href: "https://wa.me/923004018802",
     external: true,
   },
   {
     icon: Mail,
     label: "Email",
-    value: "docs@alliedshippingpk.com",
-    href: "mailto:docs@alliedshippingpk.com",
+    value: "arshad.alliedpk@gmail.com",
+    href: "mailto:arshad.alliedpk@gmail.com",
   },
 ];
 
 export default function CTA() {
   return (
-    <section className="bg-navy-primary py-16 md:py-24 lg:py-28">
+    <section className="bg-navy-primary py-12 md:py-16 lg:py-20">
       <Container>
         {/* Section header */}
-        <div className="mb-12 md:mb-16 max-w-xl mx-auto text-center">
+        <div className="mb-8 md:mb-12 max-w-xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
             Ready to Ship Your Cargo?
           </h2>
-          <p className="mt-4 text-base md:text-lg leading-relaxed text-white/70">
+          <p className="mt-3 text-base md:text-lg leading-relaxed text-white/70">
             Contact Allied Shipping Agency today for reliable sea freight, air
             freight, and documentation services.
           </p>
         </div>
 
         {/* Contact cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
           {CONTACTS.map((contact) => {
             const Icon = contact.icon;
 
             const cardContent = (
-              <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-10 transition-all duration-200 hover:bg-white/10 hover:shadow-lg">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/10">
-                  <Icon className="h-7 w-7 text-gold" strokeWidth={1.5} />
+              <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-7 transition-all duration-200 hover:bg-white/10 hover:shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/10">
+                  <Icon className="h-6 w-6 text-gold" strokeWidth={1.5} />
                 </div>
-                <span className="text-sm font-medium tracking-widest uppercase text-white/50">
+                <span className="text-xs font-medium tracking-widest uppercase text-white/50">
                   {contact.label}
                 </span>
-                <span className="text-lg font-semibold text-white">
+                <span className="text-sm font-semibold text-white break-words max-w-full">
                   {contact.value}
                 </span>
               </div>

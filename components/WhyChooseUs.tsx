@@ -37,14 +37,14 @@ const FEATURES = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-white py-16 md:py-24 lg:py-28">
+    <section className="bg-white py-12 md:py-16 lg:py-20">
       <Container>
         {/* Section header */}
-        <div className="mb-12 md:mb-16 max-w-xl">
+        <div className="mb-8 md:mb-12 max-w-xl">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
             Why Choose Allied Shipping?
           </h2>
-          <p className="mt-4 text-base md:text-lg text-body leading-relaxed">
+          <p className="mt-3 text-base md:text-lg text-body leading-relaxed">
             Trusted by exporters for reliable cargo booking and professional
             service.
           </p>
@@ -58,15 +58,15 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={feature.title}
-                className="flex items-center gap-4 rounded-xl border border-border bg-white px-6 py-7 shadow-sm transition-shadow duration-200 hover:shadow-md"
+                className="flex items-center gap-3 rounded-xl border border-border bg-white px-5 py-4 shadow-sm transition-shadow duration-200 hover:shadow-md"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-primary/5">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
                   <Icon
-                    className="h-6 w-6 text-navy-primary"
+                    className="h-5 w-5 text-navy-primary"
                     strokeWidth={1.5}
                   />
                 </div>
-                <h3 className="text-base font-semibold text-heading leading-snug">
+                <h3 className="text-sm font-semibold text-heading leading-snug">
                   {feature.title}
                 </h3>
               </div>
