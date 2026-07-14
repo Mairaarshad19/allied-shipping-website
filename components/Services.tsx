@@ -6,24 +6,27 @@ const SERVICES = [
     icon: Anchor,
     title: "Sea Freight",
     description:
-      "Full Container Load (FCL) and Less than Container Load (LCL) cargo booking from Karachi Port and Port Qasim to major international ports. Competitive freight solutions across key trade lanes.",
+      "Full Container Load (FCL) and Less than Container Load (LCL) cargo booking from Karachi Port and Port Qasim to major international ports with competitive freight solutions.",
     link: "#",
     linkLabel: "Get Sea Freight Rate →",
   },
   {
     icon: Plane,
     title: "Air Freight",
-    description: "Fast and reliable air cargo services.",
+    description:
+      "Fast, secure and time-sensitive air cargo booking for urgent import and export shipments through trusted airline partners.",
   },
   {
     icon: FileText,
     title: "Documentation",
-    description: "Professional shipping documentation support.",
+    description:
+      "Professional preparation and handling of Bills of Lading, Certificates of Origin, commercial documents and shipping paperwork.",
   },
   {
     icon: ClipboardCheck,
     title: "Cargo Booking",
-    description: "Trusted booking through our global partner network.",
+    description:
+      "Reliable cargo booking through a trusted global partner network with competitive rates and dependable sailing schedules.",
   },
   {
     icon: RefreshCw,

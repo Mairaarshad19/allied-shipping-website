@@ -1,0 +1,56 @@
+import Container from "./Container";
+
+const TESTIMONIALS = [
+  {
+    rating: "★★★★★",
+    author: "Textile Exporter — Faisalabad",
+    text: "Professional communication, competitive freight rates, and timely cargo bookings. A dependable logistics partner.",
+  },
+  {
+    rating: "★★★★★",
+    author: "Sports Goods Exporter — Sialkot",
+    text: "Documentation was handled efficiently, and our shipments were booked without delays. Highly recommended.",
+  },
+  {
+    rating: "★★★★★",
+    author: "Rice Exporter — Karachi",
+    text: "Excellent coordination, transparent communication, and reliable service from booking to shipment.",
+  },
+];
+
+export default function Testimonials() {
+  return (
+    <section className="bg-white py-12 md:py-16 lg:py-20">
+      <Container>
+        {/* Section header */}
+        <div className="mb-8 md:mb-12 max-w-xl">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
+            What Our Clients Say
+          </h2>
+          <p className="mt-3 text-base md:text-lg text-body leading-relaxed">
+            Hear from exporters who trust Allied Shipping for their cargo
+            booking needs.
+          </p>
+        </div>
+
+        {/* Testimonial cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {TESTIMONIALS.map((item) => (
+            <div
+              key={item.author}
+              className="flex flex-col gap-4 rounded-xl border border-border bg-white px-6 py-7 shadow-sm transition-shadow duration-200 hover:shadow-md"
+            >
+              <span className="text-base tracking-wider text-gold">
+                {item.rating}
+              </span>
+              <p className="text-sm text-body leading-relaxed">&ldquo;{item.text}&rdquo;</p>
+              <span className="text-xs font-semibold text-heading">
+                — {item.author}
+              </span>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}

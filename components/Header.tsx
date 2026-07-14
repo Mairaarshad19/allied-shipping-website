@@ -52,21 +52,21 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 pl-2 border-l border-border">
+          <div className="flex items-center gap-3 pl-3 border-l border-border">
             <a
               href="tel:04236293017"
-              className="inline-flex items-center gap-1.5 rounded-md border border-navy-primary px-3 py-1.5 text-xs font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"
+              className="inline-flex items-center gap-2 rounded-md border border-navy-primary px-4 py-2 text-sm font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"
             >
-              <Phone size={14} />
+              <Phone size={16} />
               Call
             </a>
             <a
               href="https://wa.me/923286920284"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-md bg-navy-primary px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-navy-secondary"
+              className="inline-flex items-center gap-2 rounded-md bg-navy-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-navy-secondary"
             >
-              <MessageCircle size={14} />
+              <MessageCircle size={16} />
               WhatsApp
             </a>
           </div>

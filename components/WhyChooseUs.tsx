@@ -1,37 +1,30 @@
-import {
-  Clock,
-  Network,
-  Ship,
-  FileText,
-  Headphones,
-  TrendingDown,
-} from "lucide-react";
+import { Globe, FileText, Ship, Clock } from "lucide-react";
 import Container from "./Container";
 
 const FEATURES = [
   {
-    icon: Clock,
-    title: "25+ Years of Industry Experience",
-  },
-  {
-    icon: Network,
-    title: "Reliable Global Partner Network",
-  },
-  {
-    icon: Ship,
-    title: "Sea & Air Freight Solutions",
+    icon: Globe,
+    title: "Global Agent Network",
+    description:
+      "Trusted logistics partners across multiple countries providing reliable local support and smooth cargo handling at destination.",
   },
   {
     icon: FileText,
-    title: "Professional Documentation Support",
+    title: "Documentation Expertise",
+    description:
+      "Accurate preparation of Bills of Lading, Certificates of Origin and all essential shipping documents.",
   },
   {
-    icon: Headphones,
-    title: "Dedicated Customer Service",
+    icon: Ship,
+    title: "FCL & LCL Expertise",
+    description:
+      "Professional Full Container Load (FCL) and Less than Container Load (LCL) cargo booking solutions through Karachi Port and Port Qasim.",
   },
   {
-    icon: TrendingDown,
-    title: "Competitive Freight Solutions",
+    icon: Clock,
+    title: "25+ Years of Experience",
+    description:
+      "Over 25 years of trusted freight forwarding experience serving exporters and importers across Pakistan.",
   },
 ];
 
@@ -51,24 +44,29 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Features grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
           {FEATURES.map((feature) => {
             const Icon = feature.icon;
 
             return (
               <div
                 key={feature.title}
-                className="flex items-center gap-3 rounded-xl border border-border bg-white px-5 py-4 shadow-sm transition-shadow duration-200 hover:shadow-md"
+                className="flex items-start gap-4 rounded-xl border border-border bg-white px-5 py-5 shadow-sm transition-shadow duration-200 hover:shadow-md"
               >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
                   <Icon
                     className="h-5 w-5 text-navy-primary"
                     strokeWidth={1.5}
                   />
                 </div>
-                <h3 className="text-sm font-semibold text-heading leading-snug">
-                  {feature.title}
-                </h3>
+                <div className="pt-0.5">
+                  <h3 className="text-base font-semibold text-heading">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-body leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             );
           })}
