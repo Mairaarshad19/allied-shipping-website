@@ -3,6 +3,7 @@ import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import ExportMarkets from "@/components/ExportMarkets";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import AboutPreview from "@/components/AboutPreview";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <ExportMarkets />
       <WhyChooseUs />
+      <AboutPreview />
     </>
   );
 }
