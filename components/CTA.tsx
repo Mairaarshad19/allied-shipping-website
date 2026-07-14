@@ -44,11 +44,11 @@ export default function CTA() {
             const Icon = contact.icon;
 
             const cardContent = (
-              <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-8 transition-colors duration-200 hover:bg-white/10">
+              <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-10 transition-all duration-200 hover:bg-white/10 hover:shadow-lg">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/10">
                   <Icon className="h-7 w-7 text-gold" strokeWidth={1.5} />
                 </div>
-                <span className="text-sm font-medium tracking-wider uppercase text-white/60">
+                <span className="text-sm font-medium tracking-widest uppercase text-white/50">
                   {contact.label}
                 </span>
                 <span className="text-lg font-semibold text-white">

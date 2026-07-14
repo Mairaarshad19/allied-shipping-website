@@ -4,26 +4,25 @@ import Container from "./Container";
 const MARKETS = [
   {
     icon: Globe,
-    label: "🇨🇳 China",
-    title: "China",
+    title: "🇨🇳 China",
     description: "Reliable cargo booking solutions.",
+    highlighted: false,
   },
   {
     icon: Globe,
-    label: "🇲🇾 Malaysia",
-    title: "Malaysia",
+    title: "🇲🇾 Malaysia",
     description: "Strong shipping connections.",
+    highlighted: false,
   },
   {
     icon: Globe,
-    label: "🇦🇪 Dubai",
-    title: "Dubai",
+    title: "🇦🇪 Dubai",
     description: "Frequent export bookings.",
+    highlighted: false,
   },
   {
     icon: Star,
-    label: "⭐ Salt Export Specialist",
-    title: "Salt Export Specialist",
+    title: "⭐ Salt Export Specialist",
     description: "Leading salt export logistics from Pakistan.",
     highlighted: true,
   },
@@ -51,9 +50,9 @@ export default function ExportMarkets() {
             return (
               <div
                 key={market.title}
-                className={`group flex flex-col items-center text-center gap-4 rounded-xl px-6 py-10 transition-shadow duration-200 hover:shadow-md ${
+                className={`group flex flex-col items-center text-center gap-4 rounded-xl px-6 py-12 shadow-sm transition-all duration-200 hover:shadow-md ${
                   market.highlighted
-                    ? "border border-gold bg-white"
+                    ? "border-2 border-gold/60 bg-white"
                     : "border border-border bg-white"
                 }`}
               >
@@ -64,13 +63,8 @@ export default function ExportMarkets() {
                       : "bg-navy-primary/5 text-navy-primary"
                   }`}
                 >
-                  <Icon className="h-7 w-7" strokeWidth={1.5} />
+                  <Icon className="h-6 w-6" strokeWidth={1.5} />
                 </div>
-
-                {/* Emoji label (mobile-friendly) */}
-                <span className="text-sm font-medium text-body">
-                  {market.label}
-                </span>
 
                 <span
                   className={`text-xl font-semibold leading-tight ${
@@ -80,7 +74,7 @@ export default function ExportMarkets() {
                   {market.title}
                 </span>
 
-                <span className="text-sm text-body leading-relaxed">
+                <span className="text-sm text-body leading-relaxed max-w-[180px]">
                   {market.description}
                 </span>
               </div>

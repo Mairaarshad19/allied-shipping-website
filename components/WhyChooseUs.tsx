@@ -58,19 +58,17 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={feature.title}
-                className="flex items-start gap-4 rounded-xl border border-border bg-white px-6 py-7 transition-shadow duration-200 hover:shadow-md"
+                className="flex items-center gap-4 rounded-xl border border-border bg-white px-6 py-7 shadow-sm transition-shadow duration-200 hover:shadow-md"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-primary/5">
                   <Icon
                     className="h-6 w-6 text-navy-primary"
                     strokeWidth={1.5}
                   />
                 </div>
-                <div className="pt-1">
-                  <h3 className="text-base font-semibold text-heading leading-snug">
-                    {feature.title}
-                  </h3>
-                </div>
+                <h3 className="text-base font-semibold text-heading leading-snug">
+                  {feature.title}
+                </h3>
               </div>
             );
           })}

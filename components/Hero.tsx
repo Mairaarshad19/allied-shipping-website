@@ -4,17 +4,17 @@ import Container from "./Container";
 
 export default function Hero() {
   return (
-    <section className="bg-white">
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 md:py-24 lg:py-32">
+    <section className="bg-white relative">
+      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20 md:py-28 lg:py-36">
         {/* Left content */}
         <div className="flex flex-col gap-6">
           {/* Gold label */}
-          <span className="inline-block w-fit rounded-full border border-gold px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-gold">
+          <span className="inline-block w-fit rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-gold">
             25+ Years of Experience
           </span>
 
           {/* Main heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-heading">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] tracking-tight text-heading">
             Reliable Freight Forwarding & Cargo Booking Solutions
           </h1>
 
@@ -27,10 +27,10 @@ export default function Hero() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-4 pt-2">
+          <div className="flex flex-wrap gap-4 pt-4">
             <Link
               href="tel:04236293017"
-              className="inline-flex items-center gap-2 rounded-md bg-navy-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-secondary"
+              className="inline-flex items-center gap-2.5 rounded-lg bg-navy-primary px-7 py-3.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-navy-secondary hover:shadow-md"
             >
               <Phone size={18} />
               Call Now
@@ -39,7 +39,7 @@ export default function Hero() {
               href="https://wa.me/923286920284"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md border border-navy-primary px-6 py-3 text-sm font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"
+              className="inline-flex items-center gap-2.5 rounded-lg border-2 border-navy-primary px-7 py-3.5 text-sm font-medium text-navy-primary transition-all hover:bg-navy-primary hover:text-white hover:shadow-md"
             >
               <MessageCircle size={18} />
               WhatsApp
@@ -48,11 +48,11 @@ export default function Hero() {
         </div>
 
         {/* Right image placeholder */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-navy-secondary">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-navy-secondary to-navy-primary shadow-lg">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center px-6">
               <svg
-                className="mx-auto mb-4 h-16 w-16 text-white/40"
+                className="mx-auto mb-4 h-20 w-20 text-white/30"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -61,11 +61,23 @@ export default function Hero() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 4.5a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 .75.75v15a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75V4.5Z"
+                  strokeWidth={0.75}
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M7.5 9.75h2.25M7.5 12.75h2.25M7.5 15.75h2.25M12 9.75h2.25M12 12.75h2.25M12 15.75h2.25"
+                  strokeWidth={0.5}
                 />
               </svg>
-              <p className="text-sm text-white/50 font-medium">
-                Cargo Shipping
+              <p className="text-sm text-white/40 font-medium tracking-wider uppercase">
+                Container Shipping
               </p>
             </div>
           </div>

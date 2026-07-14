@@ -47,19 +47,19 @@ export default function Services() {
             return (
               <div
                 key={service.title}
-                className="flex items-start gap-5 rounded-xl border border-border bg-white px-6 py-7 transition-shadow duration-200 hover:shadow-md"
+                className="flex items-start gap-5 rounded-xl border border-border bg-white px-6 py-8 shadow-sm transition-shadow duration-200 hover:shadow-md min-h-[120px]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-primary/5">
                   <Icon
                     className="h-6 w-6 text-navy-primary"
                     strokeWidth={1.5}
                   />
                 </div>
-                <div>
+                <div className="pt-0.5">
                   <h3 className="text-lg font-semibold text-heading">
                     {service.title}
                   </h3>
-                  <p className="mt-1 text-sm text-body leading-relaxed">
+                  <p className="mt-1.5 text-sm text-body leading-relaxed">
                     {service.description}
                   </p>
                 </div>
