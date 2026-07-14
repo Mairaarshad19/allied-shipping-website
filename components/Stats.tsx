@@ -1,26 +1,26 @@
-import { Ship, Warehouse, Globe, Mountain } from "lucide-react";
+import { Globe, Ship, ShieldCheck, Clock } from "lucide-react";
 import Container from "./Container";
 
 const STATS = [
   {
+    icon: Globe,
+    title: "50+",
+    description: "Countries Served",
+  },
+  {
     icon: Ship,
+    title: "200+",
+    description: "Shipments Per Year",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Pakistan's Trusted",
+    description: "Freight Partner",
+  },
+  {
+    icon: Clock,
     title: "25+",
     description: "Years Experience",
-  },
-  {
-    icon: Warehouse,
-    title: "Sea & Air",
-    description: "Freight Services",
-  },
-  {
-    icon: Globe,
-    title: "Gulf",
-    description: "Export Lanes",
-  },
-  {
-    icon: Mountain,
-    title: "Salt Export",
-    description: "Specialist",
   },
 ];
 

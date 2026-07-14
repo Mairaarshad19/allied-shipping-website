@@ -1,30 +1,30 @@
-import { Globe, Star } from "lucide-react";
+import { Globe, Ship, MapPin, Star } from "lucide-react";
 import Container from "./Container";
 
 const MARKETS = [
   {
-    icon: Globe,
-    title: "China",
-    description: "Reliable cargo booking solutions.",
+    icon: Ship,
+    title: "Port Klang",
+    description: "Malaysia's premier port with reliable connections.",
+    highlighted: false,
+  },
+  {
+    icon: MapPin,
+    title: "Penang",
+    description: "North Malaysia gateway for efficient cargo handling.",
     highlighted: false,
   },
   {
     icon: Globe,
-    title: "Red Sea",
-    description: "Strong shipping connections.",
+    title: "UAE Sector",
+    description: "Dubai and UAE ports with frequent sailings.",
     highlighted: false,
   },
   {
     icon: Globe,
-    title: "Gulf",
-    description: "Frequent export bookings.",
+    title: "China & Far East",
+    description: "Major Asian trade lanes with competitive rates.",
     highlighted: false,
-  },
-  {
-    icon: Star,
-    title: "⭐ Salt Export Specialist",
-    description: "Leading salt export logistics from Pakistan.",
-    highlighted: true,
   },
 ];
 
@@ -35,10 +35,11 @@ export default function ExportMarkets() {
         {/* Section header */}
         <div className="mb-8 md:mb-12 max-w-xl">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
-            Specialized Export Markets
+            Specialized Trade Lanes
           </h2>
           <p className="mt-3 text-base md:text-lg text-body leading-relaxed">
-            We help Pakistani exporters connect with key international markets.
+            Regular cargo services across Pakistan's busiest import and
+            export trade lanes with reliable consolidation options.
           </p>
         </div>
 

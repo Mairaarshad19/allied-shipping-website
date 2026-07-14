@@ -1,11 +1,14 @@
-import { Anchor, Plane, FileText, ClipboardCheck } from "lucide-react";
+import { Anchor, Plane, FileText, ClipboardCheck, RefreshCw } from "lucide-react";
 import Container from "./Container";
 
 const SERVICES = [
   {
     icon: Anchor,
     title: "Sea Freight",
-    description: "FCL & LCL cargo booking solutions.",
+    description:
+      "Full Container Load (FCL) and Less than Container Load (LCL) cargo booking from Karachi Port and Port Qasim to major international ports. Competitive freight solutions across key trade lanes.",
+    link: "#",
+    linkLabel: "Get Sea Freight Rate →",
   },
   {
     icon: Plane,
@@ -21,6 +24,12 @@ const SERVICES = [
     icon: ClipboardCheck,
     title: "Cargo Booking",
     description: "Trusted booking through our global partner network.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Import & Export",
+    description:
+      "Reliable import and export cargo booking solutions connecting Pakistan with international markets.",
   },
 ];
 
@@ -62,6 +71,14 @@ export default function Services() {
                   <p className="mt-1 text-sm text-body leading-relaxed">
                     {service.description}
                   </p>
+                  {service.link && (
+                    <a
+                      href={service.link}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-gold transition-colors hover:text-gold/80"
+                    >
+                      {service.linkLabel}
+                    </a>
+                  )}
                 </div>
               </div>
             );
