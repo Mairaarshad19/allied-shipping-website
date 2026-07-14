@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import ExportMarkets from "@/components/ExportMarkets";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AboutPreview from "@/components/AboutPreview";
+import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ExportMarkets />
       <WhyChooseUs />
       <AboutPreview />
+      <CTA />
     </>
   );
 }
