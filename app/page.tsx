@@ -5,6 +5,7 @@ import ExportMarkets from "@/components/ExportMarkets";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import AboutPreview from "@/components/AboutPreview";
+import VisionMission from "@/components/VisionMission";
 import CTA from "@/components/CTA";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <WhyChooseUs />
       <Testimonials />
       <AboutPreview />
+      <VisionMission />
       <CTA />
     </>
   );
