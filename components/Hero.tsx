@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Container from "./Container";
 
@@ -46,32 +47,42 @@ export default function Hero() {
         <Container className="w-full">
           <div className="max-w-xl lg:max-w-2xl">
             {/* Gold badge */}
-            <div className="animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+            >
               <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-6 py-2 text-sm font-bold uppercase tracking-[0.08em] text-gold shadow-[0_0_14px_rgba(201,162,39,0.2)] ring-1 ring-gold/20">
                 25+ Years of Experience
               </span>
-            </div>
+            </motion.div>
 
             {/* Heading */}
-            <h1
-              className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-white animate-fade-up opacity-0 text-shadow-soft"
-              style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
+              className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-white text-shadow-soft"
             >
               Reliable Freight Forwarding & Cargo Booking Solutions
-            </h1>
+            </motion.h1>
 
             {/* Description */}
-            <p
-              className="mt-6 text-base md:text-lg lg:text-xl leading-relaxed text-white/85 max-w-xl animate-fade-up opacity-0 text-shadow-soft"
-              style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+              className="mt-6 text-base md:text-lg lg:text-xl leading-relaxed text-white/85 max-w-xl text-shadow-soft"
             >
               Trusted freight forwarding and cargo booking solutions connecting Pakistan with global markets through reliable sea and air freight.
-            </p>
+            </motion.p>
 
             {/* Buttons */}
-            <div
-              className="mt-10 flex items-center animate-fade-up opacity-0"
-              style={{ animationDelay: "0.55s", animationFillMode: "forwards" }}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.55 }}
+              className="mt-10 flex items-center"
             >
               <button
                 type="button"
@@ -80,7 +91,7 @@ export default function Hero() {
               >
                 Contact Us
               </button>
-            </div>
+            </motion.div>
           </div>
         </Container>
       </div>

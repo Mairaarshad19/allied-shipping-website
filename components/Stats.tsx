@@ -1,5 +1,6 @@
 import { Globe, Ship, ShieldCheck, Clock } from "lucide-react";
 import Container from "./Container";
+import Reveal from "./Reveal";
 
 const STATS = [
   {
@@ -32,20 +33,23 @@ export default function Stats() {
 
       <Container className="mt-16 md:mt-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
-          {STATS.map((stat) => {
+          {STATS.map((stat, index) => {
             const Icon = stat.icon;
 
             return (
-              <div
+              <Reveal
                 key={stat.title}
-                className="flex flex-col items-center text-center gap-2 rounded-xl border border-border bg-white px-5 py-8 shadow-lg shadow-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10"
+                type="fade-up"
+                delay={index * 100}
               >
-                <Icon className="h-6 w-6 text-navy-primary" strokeWidth={1.5} />
-                <span className="text-xl md:text-2xl font-semibold leading-tight text-heading">
-                  {stat.title}
-                </span>
-                <span className="text-xs text-body">{stat.description}</span>
-              </div>
+                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-border bg-white px-5 py-8 shadow-lg shadow-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10">
+                  <Icon className="h-6 w-6 text-navy-primary" strokeWidth={1.5} />
+                  <span className="text-xl md:text-2xl font-semibold leading-tight text-heading">
+                    {stat.title}
+                  </span>
+                  <span className="text-xs text-body">{stat.description}</span>
+                </div>
+              </Reveal>
             );
           })}
         </div>

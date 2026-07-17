@@ -1,4 +1,5 @@
 import Container from "./Container";
+import Reveal from "./Reveal";
 
 const TESTIMONIALS = [
   {
@@ -23,31 +24,36 @@ export default function Testimonials() {
     <section className="bg-white py-12 md:py-16 lg:py-20">
       <Container>
         {/* Section header */}
-        <div className="mb-8 md:mb-12 max-w-xl">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
-            What Our Clients Say
-          </h2>
-          <p className="mt-3 text-base md:text-lg text-body leading-relaxed">
-            Hear from exporters who trust Allied Shipping for their cargo
-            booking needs.
-          </p>
-        </div>
+        <Reveal type="fade-up">
+          <div className="mb-8 md:mb-12 max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
+              What Our Clients Say
+            </h2>
+            <p className="mt-3 text-base md:text-lg text-body leading-relaxed">
+              Hear from exporters who trust Allied Shipping for their cargo
+              booking needs.
+            </p>
+          </div>
+        </Reveal>
 
         {/* Testimonial cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {TESTIMONIALS.map((item) => (
-            <div
+          {TESTIMONIALS.map((item, index) => (
+            <Reveal
               key={item.author}
-              className="flex flex-col gap-4 rounded-xl border border-border bg-white px-6 py-7 shadow-sm transition-shadow duration-200 hover:shadow-md"
+              type="fade-up"
+              delay={index * 100}
             >
-              <span className="text-base tracking-wider text-gold">
-                {item.rating}
-              </span>
-              <p className="text-sm text-body leading-relaxed">&ldquo;{item.text}&rdquo;</p>
-              <span className="text-xs font-semibold text-heading">
-                — {item.author}
-              </span>
-            </div>
+              <div className="flex flex-col gap-4 rounded-xl border border-border bg-white px-6 py-7 shadow-sm transition-shadow duration-200 hover:shadow-md">
+                <span className="text-base tracking-wider text-gold">
+                  {item.rating}
+                </span>
+                <p className="text-sm text-body leading-relaxed">&ldquo;{item.text}&rdquo;</p>
+                <span className="text-xs font-semibold text-heading">
+                  — {item.author}
+                </span>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>

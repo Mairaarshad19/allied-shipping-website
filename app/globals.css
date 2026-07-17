@@ -62,3 +62,73 @@ body {
 .text-shadow-soft {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
+
+/* ── Scroll reveal animations ── */
+
+@keyframes reveal-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-reveal-fade-up {
+  animation: reveal-fade-up 0.8s ease-out forwards;
+}
+
+.animate-reveal-fade-in {
+  animation: reveal-fade-in 0.8s ease-out forwards;
+}
+
+.animate-reveal-slide-left {
+  animation: reveal-slide-left 0.8s ease-out forwards;
+}
+
+.animate-reveal-slide-right {
+  animation: reveal-slide-right 0.8s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal-fade-up,
+  .animate-reveal-fade-in,
+  .animate-reveal-slide-left,
+  .animate-reveal-slide-right {
+    animation: none;
+    opacity: 1;
+  }
+}

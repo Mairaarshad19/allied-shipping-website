@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Container from "./Container";
+import Reveal from "./Reveal";
 
 export default function AboutPreview() {
   return (
@@ -9,46 +10,50 @@ export default function AboutPreview() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left — real image with subtle navy overlay */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-navy-primary shadow-lg group">
-            <Image
-              src="/images/containerImage.jpg"
-              alt="Shipping containers at port — Allied Shipping Agency"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-navy-primary/15 to-navy-primary/10" />
-          </div>
+          <Reveal type="slide-left">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-navy-primary shadow-lg group">
+              <Image
+                src="/images/containerImage.jpg"
+                alt="Shipping containers at port — Allied Shipping Agency"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-navy-primary/15 to-navy-primary/10" />
+            </div>
+          </Reveal>
 
           {/* Right — content */}
-          <div className="flex flex-col gap-5">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
-              About Allied Shipping Agency
-            </h2>
+          <Reveal type="slide-right" delay={150}>
+            <div className="flex flex-col gap-5">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
+                About Allied Shipping Agency
+              </h2>
 
-            <p className="text-base md:text-lg leading-relaxed text-body">
-              Allied Shipping Agency is a trusted cargo booking agency based in
-              Lahore, Pakistan. With over 25 years of experience, we provide
-              reliable sea freight and air freight solutions for exporters and
-              importers.
-            </p>
+              <p className="text-base md:text-lg leading-relaxed text-body">
+                Allied Shipping Agency is a trusted cargo booking agency based in
+                Lahore, Pakistan. With over 25 years of experience, we provide
+                reliable sea freight and air freight solutions for exporters and
+                importers.
+              </p>
 
-            <p className="text-base md:text-lg leading-relaxed text-body">
-              Our expertise covers full documentation support, FCL and LCL
-              cargo, and seamless booking through a strong global network of
-              shipping partners.
-            </p>
+              <p className="text-base md:text-lg leading-relaxed text-body">
+                Our expertise covers full documentation support, FCL and LCL
+                cargo, and seamless booking through a strong global network of
+                shipping partners.
+              </p>
 
-            <div className="pt-1">
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2.5 rounded-lg bg-navy-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-all hover:bg-navy-secondary hover:shadow-md"
-              >
-                Learn More
-                <ArrowRight size={18} />
-              </Link>
+              <div className="pt-1">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2.5 rounded-lg bg-navy-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-all hover:bg-navy-secondary hover:shadow-md"
+                >
+                  Learn More
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>
