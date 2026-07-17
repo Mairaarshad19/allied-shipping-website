@@ -30,17 +30,17 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isHomeHero && !scrolled
           ? "bg-transparent shadow-none"
-          : "bg-white shadow-md"
+          : "bg-white/95 backdrop-blur-md shadow-lg shadow-black/5"
       }`}
     >
-      <Container className="flex items-center justify-between py-4">
+      <Container className="flex items-center justify-between py-3 md:py-4">
         {/* Logo */}
         <Link
           href="/"
-          className={`text-xl font-semibold tracking-tight transition-colors duration-300 ${
+          className={`text-xl font-semibold tracking-tight transition-colors duration-500 ${
             isHomeHero && !scrolled ? "text-white" : "text-navy-primary"
           }`}
         >
@@ -48,15 +48,15 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav + buttons */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 ${
+                className={`text-sm font-medium transition-colors duration-500 ${
                   isHomeHero && !scrolled
-                    ? "text-white/80 hover:text-white"
+                    ? "text-white/85 hover:text-white"
                     : "text-body hover:text-navy-primary"
                 }`}
               >
@@ -65,14 +65,14 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className={`flex items-center gap-3 pl-3 transition-colors duration-300 ${
+          <div className={`flex items-center gap-3 pl-8 transition-colors duration-500 ${
             isHomeHero && !scrolled ? "border-l border-white/20" : "border-l border-border"
           }`}>
              <a
               href="tel:04236293017"
-              className={`inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm font-medium transition-colors ${
+              className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-all duration-500 ${
                 isHomeHero && !scrolled
-                  ? "border-white/60 text-white hover:bg-white hover:text-navy-primary"
+                  ? "border-white/70 text-white hover:bg-white/15"
                   : "border-navy-primary text-navy-primary hover:bg-navy-primary hover:text-white"
               }`}
             >
@@ -83,9 +83,9 @@ export default function Header() {
               href="https://wa.me/923286920284"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-white transition-colors ${
+              className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-all duration-500 ${
                 isHomeHero && !scrolled
-                  ? "bg-white/25 hover:bg-white/40"
+                  ? "bg-white/20 hover:bg-white/35"
                   : "bg-navy-primary hover:bg-navy-secondary"
               }`}
             >
@@ -99,7 +99,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMenuOpen((prev) => !prev)}
-          className={`md:hidden p-2 transition-colors duration-300 ${
+          className={`md:hidden p-2 transition-colors duration-500 ${
             isHomeHero && !scrolled ? "text-white" : "text-navy-primary"
           }`}
           aria-label={menuOpen ? "Close menu" : "Open menu"}

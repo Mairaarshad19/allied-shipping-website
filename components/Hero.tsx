@@ -14,7 +14,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[90vh] min-h-[600px] max-h-[900px] overflow-hidden">
+    <section className="relative h-[90vh] min-h-[600px] max-h-[900px] overflow-hidden pt-16 md:pt-20">
       {/* Background video / fallback image */}
       {!videoError ? (
         <video
