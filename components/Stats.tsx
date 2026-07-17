@@ -27,12 +27,12 @@ const STATS = [
 
 export default function Stats() {
   return (
-    <section className="bg-white relative z-10 pb-16 md:pb-20 lg:pb-24">
+    <section className="bg-white relative z-10 pb-12 sm:pb-16 lg:pb-24">
       {/* Visual divider */}
-      <div className="mx-auto w-px h-12 bg-gradient-to-b from-transparent via-border to-transparent" />
+      <div className="mx-auto w-px h-10 sm:h-12 bg-gradient-to-b from-transparent via-border to-transparent" />
 
-      <Container className="mt-16 md:mt-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
+      <Container className="mt-10 sm:mt-16 md:mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-8">
           {STATS.map((stat, index) => {
             const Icon = stat.icon;
 
@@ -42,12 +42,12 @@ export default function Stats() {
                 type="fade-up"
                 delay={index * 100}
               >
-                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-border bg-white px-5 py-8 shadow-lg shadow-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10">
+                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-border bg-white px-4 sm:px-5 py-6 sm:py-8 shadow-lg shadow-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10">
                   <Icon className="h-6 w-6 text-navy-primary" strokeWidth={1.5} />
-                  <span className="text-xl md:text-2xl font-semibold leading-tight text-heading">
+                  <span className="text-xl md:text-2xl font-semibold leading-tight text-heading break-words">
                     {stat.title}
                   </span>
-                  <span className="text-xs text-body">{stat.description}</span>
+                  <span className="text-xs text-body break-words">{stat.description}</span>
                 </div>
               </Reveal>
             );

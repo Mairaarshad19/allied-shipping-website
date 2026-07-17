@@ -39,11 +39,11 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section className="bg-white pb-12 md:pb-16 lg:pb-20 pt-8 md:pt-12 lg:pt-14">
+    <section className="bg-white pb-10 sm:pb-16 lg:pb-20 pt-6 sm:pt-12 lg:pt-14">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">
-          <div className="mb-8 md:mb-12 max-w-xl">
+          <div className="mb-6 sm:mb-12 max-w-xl">
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
               Our Services
             </h2>
@@ -65,18 +65,18 @@ export default function Services() {
                 type="fade-up"
                 delay={index * 100}
               >
-                <div className="flex items-start gap-4 rounded-xl border border-border bg-white px-5 py-5 shadow-sm transition-shadow duration-200 hover:shadow-md">
+                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-white px-4 sm:px-5 py-4 sm:py-5 shadow-sm transition-shadow duration-200 hover:shadow-md">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
                     <Icon
                       className="h-5 w-5 text-navy-primary"
                       strokeWidth={1.5}
                     />
                   </div>
-                  <div className="pt-0.5">
-                    <h3 className="text-base font-semibold text-heading">
+                  <div className="pt-0.5 min-w-0">
+                    <h3 className="text-base font-semibold text-heading break-words">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-sm text-body leading-relaxed">
+                    <p className="mt-1 text-sm text-body leading-relaxed break-words">
                       {service.description}
                     </p>
                     {service.link && (
