@@ -14,18 +14,6 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [isHomeHero, setIsHomeHero] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-    setIsHomeHero(window.location.pathname === "/");
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
@@ -39,58 +27,40 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isHomeHero && !scrolled
-          ? "bg-transparent shadow-none"
-          : "bg-white/95 backdrop-blur-md shadow-lg shadow-black/5"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg shadow-black/5">
       <Container className="flex items-center justify-between py-3 md:py-4">
-        {/* Logo — truncate on smallest screens to avoid overflow */}
+        {/* Logo */}
         <Link
           href="/"
-          className={`text-lg sm:text-xl font-semibold tracking-tight truncate max-w-[55vw] sm:max-w-none transition-colors duration-500 ${
-            isHomeHero && !scrolled ? "text-white" : "text-navy-primary"
-          }`}
+          className="text-lg sm:text-xl font-semibold tracking-tight truncate max-w-[55vw] sm:max-w-none text-navy-primary"
           aria-label="Allied Shipping Agency — Home"
         >
           Allied Shipping Agency
         </Link>
 
-        {/* Desktop nav + buttons (unchanged) */}
+        {/* Desktop nav + buttons */}
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-500 ${
-                  isHomeHero && !scrolled
-                    ? "text-white/85 hover:text-white"
-                    : "text-body hover:text-navy-primary"
-                }`}
+                className="text-sm font-medium text-body hover:text-navy-primary transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div
-            className={`flex items-center gap-3 pl-8 transition-colors duration-500 ${
-              isHomeHero && !scrolled
-                ? "border-l border-white/20"
-                : "border-l border-border"
-            }`}
-          >
+          <div className="flex items-center gap-3 pl-8 border-l border-border">
             <a
               href="tel:04236293017"
-              className={`inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-all duration-500 ${
-                isHomeHero && !scrolled
-                  ? "border-white/70 text-white hover:bg-white/15"
-                  : "border-navy-primary text-navy-primary hover:bg-navy-primary hover:text-white"
-              }`}
+              className="inline-flex items-center gap-2 rounded-lg border border-navy-primary px-4 py-2 text-sm font-medium text-navy-primary transition-all hover:bg-navy-primary hover:text-white"
             >
               <Phone size={16} />
               Call
@@ -99,11 +69,7 @@ export default function Header() {
               href="https://wa.me/923286920284"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white transition-all duration-500 ${
-                isHomeHero && !scrolled
-                  ? "bg-white/20 hover:bg-white/35"
-                  : "bg-navy-primary hover:bg-navy-secondary"
-              }`}
+              className="inline-flex items-center gap-2 rounded-lg bg-navy-primary px-4 py-2 text-sm font-medium text-white transition-all hover:bg-navy-secondary"
             >
               <MessageCircle size={16} />
               WhatsApp
@@ -115,9 +81,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMenuOpen((prev) => !prev)}
-          className={`md:hidden flex items-center justify-center h-10 w-10 shrink-0 transition-colors duration-500 ${
-            isHomeHero && !scrolled ? "text-white" : "text-navy-primary"
-          }`}
+          className="md:hidden flex items-center justify-center h-10 w-10 shrink-0 text-navy-primary"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
         >
@@ -141,7 +105,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={closeMenu}
                   className="flex items-center min-h-[44px] text-base font-medium text-body transition-colors hover:text-navy-primary rounded-lg px-3 -mx-3 hover:bg-beige-warm/60"
                 >
                   {link.label}
