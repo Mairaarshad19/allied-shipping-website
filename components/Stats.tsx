@@ -30,7 +30,7 @@ export default function Stats() {
       {/* Visual divider */}
       <div className="mx-auto w-px h-12 bg-gradient-to-b from-transparent via-border to-transparent" />
 
-      <Container className="-mt-10">
+      <Container className="mt-16 md:mt-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
           {STATS.map((stat) => {
             const Icon = stat.icon;
