@@ -16,7 +16,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden pt-16 md:pt-20">
+    <section className="relative h-screen min-h-[560px] md:min-h-[600px] overflow-hidden pt-16 md:pt-20">
       {/* Background video / fallback image */}
       {!videoError ? (
         <video
@@ -39,8 +39,8 @@ export default function Hero() {
         style={{ backgroundImage: "url(/images/ShipImage2.jpg)" }}
       />
 
-      {/* Gradient overlay: dark on left, transparent on right so ship is visible */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-primary/85 via-navy-primary/60 to-transparent" />
+      {/* Gradient overlay: stronger on mobile for readability, lighter on desktop */}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-primary/90 via-navy-primary/70 md:via-navy-primary/60 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-center h-full">
@@ -52,7 +52,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
             >
-              <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-6 py-2 text-sm font-bold uppercase tracking-[0.08em] text-gold shadow-[0_0_14px_rgba(201,162,39,0.2)] ring-1 ring-gold/20">
+              <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-bold uppercase tracking-[0.08em] text-gold shadow-[0_0_14px_rgba(201,162,39,0.2)] ring-1 ring-gold/20">
                 25+ Years of Experience
               </span>
             </motion.div>
@@ -62,7 +62,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
-              className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-white text-shadow-soft"
+              className="mt-6 sm:mt-8 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-white text-shadow-soft"
             >
               Reliable Freight Forwarding & Cargo Booking Solutions
             </motion.h1>
@@ -72,7 +72,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
-              className="mt-6 text-base md:text-lg lg:text-xl leading-relaxed text-white/85 max-w-xl text-shadow-soft"
+              className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-white/85 max-w-xl text-shadow-soft"
             >
               Trusted freight forwarding and cargo booking solutions connecting Pakistan with global markets through reliable sea and air freight.
             </motion.p>
@@ -82,12 +82,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.55 }}
-              className="mt-10 flex items-center"
+              className="mt-8 sm:mt-10 flex items-center"
             >
               <button
                 type="button"
                 onClick={scrollToCTA}
-                className="inline-flex items-center gap-2.5 rounded-lg border-2 border-white bg-white px-8 py-3.5 text-sm font-semibold text-navy-primary shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-navy-primary hover:text-white hover:shadow-lg"
+                className="inline-flex items-center gap-2.5 rounded-lg border-2 border-white bg-white px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold text-navy-primary shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-navy-primary hover:text-white hover:shadow-lg"
               >
                 Contact Us
               </button>
