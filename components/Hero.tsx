@@ -74,7 +74,7 @@ export default function Hero() {
             <button
               type="button"
               onClick={scrollToCTA}
-              className="inline-flex items-center gap-2.5 rounded-lg bg-gold px-8 py-3.5 text-sm font-semibold text-navy-primary shadow-sm transition-all duration-200 hover:bg-gold/90 hover:shadow-md"
+              className="inline-flex items-center gap-2.5 rounded-lg bg-navy-primary px-8 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-navy-secondary hover:shadow-md"
             >
               Contact Us
             </button>
