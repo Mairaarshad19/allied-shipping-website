@@ -21,11 +21,11 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-12 md:py-16 lg:py-20">
+    <section className="bg-white py-10 sm:py-16 lg:py-20">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">
-          <div className="mb-8 md:mb-12 max-w-xl">
+          <div className="mb-6 sm:mb-12 max-w-xl">
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
               What Our Clients Say
             </h2>
@@ -44,12 +44,12 @@ export default function Testimonials() {
               type="fade-up"
               delay={index * 100}
             >
-              <div className="flex flex-col gap-4 rounded-xl border border-border bg-white px-6 py-7 shadow-sm transition-shadow duration-200 hover:shadow-md">
+              <div className="flex flex-col gap-3 sm:gap-4 rounded-xl border border-border bg-white px-5 sm:px-6 py-6 sm:py-7 shadow-sm transition-shadow duration-200 hover:shadow-md h-full">
                 <span className="text-base tracking-wider text-gold">
                   {item.rating}
                 </span>
-                <p className="text-sm text-body leading-relaxed">&ldquo;{item.text}&rdquo;</p>
-                <span className="text-xs font-semibold text-heading">
+                <p className="text-sm text-body leading-relaxed break-words">&ldquo;{item.text}&rdquo;</p>
+                <span className="text-xs font-semibold text-heading break-words">
                   — {item.author}
                 </span>
               </div>

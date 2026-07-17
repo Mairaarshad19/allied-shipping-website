@@ -1,4 +1,4 @@
-import { Globe, Ship, MapPin, Star } from "lucide-react";
+import { Globe, Ship, MapPin } from "lucide-react";
 import Container from "./Container";
 import Reveal from "./Reveal";
 
@@ -31,11 +31,11 @@ const MARKETS = [
 
 export default function ExportMarkets() {
   return (
-    <section className="bg-beige-warm py-12 md:py-16 lg:py-20">
+    <section className="bg-beige-warm py-10 sm:py-16 lg:py-20">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">
-          <div className="mb-8 md:mb-12 max-w-xl">
+          <div className="mb-6 sm:mb-12 max-w-xl">
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-heading">
               Specialized Trade Lanes
             </h2>
@@ -58,14 +58,14 @@ export default function ExportMarkets() {
                 delay={index * 100}
               >
                 <div
-                  className={`group flex flex-col items-center text-center gap-3 rounded-xl px-5 py-8 shadow-sm transition-all duration-200 hover:shadow-md ${
+                  className={`group flex flex-col items-center text-center gap-3 rounded-xl px-4 sm:px-5 py-6 sm:py-8 shadow-sm transition-all duration-200 hover:shadow-md h-full ${
                     market.highlighted
                       ? "border-2 border-gold/60 bg-white"
                       : "border border-border bg-white"
                   }`}
                 >
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-full ${
+                    className={`flex h-12 w-12 items-center justify-center rounded-full shrink-0 ${
                       market.highlighted
                         ? "bg-gold/10 text-gold"
                         : "bg-navy-primary/5 text-navy-primary"
@@ -75,14 +75,14 @@ export default function ExportMarkets() {
                   </div>
 
                   <span
-                    className={`text-lg font-semibold leading-tight ${
+                    className={`text-lg font-semibold leading-tight break-words ${
                       market.highlighted ? "text-gold" : "text-heading"
                     }`}
                   >
                     {market.title}
                   </span>
 
-                  <span className="text-sm text-body leading-relaxed">
+                  <span className="text-sm text-body leading-relaxed break-words">
                     {market.description}
                   </span>
                 </div>

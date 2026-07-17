@@ -26,12 +26,12 @@ const CONTACTS = [
 
 export default function CTA() {
   return (
-    <section id="cta-section" className="bg-navy-primary py-12 md:py-16 lg:py-20">
+    <section id="cta-section" className="bg-navy-primary py-10 sm:py-16 lg:py-20">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">
-          <div className="mb-8 md:mb-12 max-w-xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+          <div className="mb-6 sm:mb-12 max-w-xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white break-words">
               Ready to Ship Your Cargo?
             </h2>
             <p className="mt-3 text-base md:text-lg leading-relaxed text-white/70">
@@ -43,13 +43,13 @@ export default function CTA() {
 
         {/* Contact cards */}
         <Reveal type="fade-up" delay={150}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto">
             {CONTACTS.map((contact) => {
               const Icon = contact.icon;
 
               const cardContent = (
-                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-7 transition-all duration-200 hover:bg-white/10 hover:shadow-lg">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/10">
+                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 sm:px-5 py-6 sm:py-7 transition-all duration-200 hover:bg-white/10 hover:shadow-lg">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/10 shrink-0">
                     <Icon className="h-6 w-6 text-gold" strokeWidth={1.5} />
                   </div>
                   <span className="text-xs font-medium tracking-widest uppercase text-white/50">
