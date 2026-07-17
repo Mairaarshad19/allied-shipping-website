@@ -1,65 +1,91 @@
-import Container from "./Container";
+"use client";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
-  return (
-    <section className="bg-white relative">
-      <Container className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center py-14 md:py-20 lg:py-24">
-        {/* Left content */}
-        <div className="flex flex-col gap-5">
-          {/* Gold label */}
-          <span className="inline-block w-fit rounded-full border border-gold/40 bg-gold/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-gold">
-            25+ Years of Experience
-          </span>
+  const [videoError, setVideoError] = useState(false);
 
-          {/* Main heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] tracking-tight text-heading">
+  const scrollToCTA = () => {
+    const el = document.getElementById("cta-section");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <section className="relative h-[90vh] min-h-[600px] max-h-[900px] overflow-hidden">
+      {/* Background video / fallback image */}
+      {!videoError ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          onError={() => setVideoError(true)}
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/heroVideo.mp4" type="video/mp4" />
+        </video>
+      ) : null}
+
+      {/* Fallback image (shown if video fails or before video loads) */}
+      <div
+        className={`absolute inset-0 w-full h-full bg-cover bg-center ${
+          videoError ? "block" : "hidden"
+        }`}
+        style={{ backgroundImage: "url(/images/ShipImage2.jpg)" }}
+      />
+
+      {/* Dark navy overlay */}
+      <div className="absolute inset-0 bg-navy-primary/60" />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Gold badge */}
+          <div className="animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
+            <span className="inline-block rounded-full border border-gold/40 bg-gold/10 px-6 py-2 text-sm font-bold uppercase tracking-[0.08em] text-gold shadow-[0_0_14px_rgba(201,162,39,0.2)] ring-1 ring-gold/20">
+              25+ Years of Experience
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1
+            className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-white animate-fade-up opacity-0 text-shadow-soft"
+            style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
+          >
             Reliable Freight Forwarding & Cargo Booking Solutions
           </h1>
 
           {/* Description */}
-          <p className="text-base md:text-lg leading-relaxed text-body max-w-lg">
-            Allied Shipping Agency is a trusted freight forwarding and cargo
-            booking partner based in Lahore, Pakistan. With 25+ years of
-            experience, we specialise in sea(LCL, FCL) and air freight globally.
+          <p
+            className="mt-5 text-base md:text-lg lg:text-xl leading-relaxed text-white/85 max-w-2xl mx-auto animate-fade-up opacity-0 text-shadow-soft"
+            style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
+          >
+            Trusted freight forwarding and cargo booking solutions connecting Pakistan with global markets through reliable sea and air freight.
           </p>
-        </div>
 
-        {/* Right image placeholder */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-navy-secondary to-navy-primary shadow-lg">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-6">
-              <svg
-                className="mx-auto mb-4 h-20 w-20 text-white/30"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 4.5a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 .75.75v15a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75V4.5Z"
-                  strokeWidth={0.75}
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M7.5 9.75h2.25M7.5 12.75h2.25M7.5 15.75h2.25M12 9.75h2.25M12 12.75h2.25M12 15.75h2.25"
-                  strokeWidth={0.5}
-                />
-              </svg>
-              <p className="text-sm text-white/40 font-medium tracking-wider uppercase">
-                Container Shipping
-              </p>
-            </div>
+          {/* Buttons */}
+          <div
+            className="mt-8 flex items-center justify-center animate-fade-up opacity-0"
+            style={{ animationDelay: "0.55s", animationFillMode: "forwards" }}
+          >
+            <button
+              type="button"
+              onClick={scrollToCTA}
+              className="inline-flex items-center gap-2.5 rounded-lg bg-gold px-8 py-3.5 text-sm font-semibold text-navy-primary shadow-sm transition-all duration-200 hover:bg-gold/90 hover:shadow-md"
+            >
+              Contact Us
+            </button>
           </div>
         </div>
-      </Container>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce-down">
+        <ChevronDown className="h-7 w-7 text-white/60" strokeWidth={1.5} />
+      </div>
     </section>
   );
 }
