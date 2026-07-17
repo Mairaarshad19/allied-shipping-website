@@ -1,13 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Container from "./Container";
 
 export default function Hero() {
-  const [videoError, setVideoError] = useState(false);
-
   const scrollToCTA = () => {
     const el = document.getElementById("cta-section");
     if (el) {
@@ -17,29 +14,13 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen min-h-[560px] md:min-h-[600px] overflow-hidden pt-16 md:pt-20">
-      {/* Background video / fallback image */}
-      {!videoError ? (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/heroVideo.mp4" type="video/mp4" />
-        </video>
-      ) : null}
-
-      {/* Fallback image (shown if video fails or before video loads) */}
+      {/* Background image */}
       <div
-        className={`absolute inset-0 w-full h-full bg-cover bg-center ${
-          videoError ? "block" : "hidden"
-        }`}
-        style={{ backgroundImage: "url(/images/ShipImage2.jpg)" }}
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/HeroImage.jpg)" }}
       />
 
-      {/* Gradient overlay: stronger on mobile for readability, lighter on desktop */}
+      {/* Dark navy overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy-primary/90 via-navy-primary/70 md:via-navy-primary/60 to-transparent" />
 
       {/* Content */}
@@ -87,7 +68,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={scrollToCTA}
-                className="inline-flex items-center gap-2.5 rounded-lg border-2 border-white bg-white px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold text-navy-primary shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-navy-primary hover:text-white hover:shadow-lg"
+                className="inline-flex items-center gap-2.5 rounded-lg border-2 border-white bg-white px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold text-navy-primary shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-navy-secondary hover:shadow-lg"
               >
                 Contact Us
               </button>
