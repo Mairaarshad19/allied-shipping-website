@@ -23,6 +23,67 @@
   --font-sans: var(--font-inter);
 }
 
+/* ── Page loading indicator bar ── */
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 70%;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+    opacity: 0;
+  }
+}
+
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--navy-primary));
+  z-index: 9999;
+  animation: loading-bar 1.2s ease-in-out forwards;
+  pointer-events: none;
+}
+
+/* ── Page fade-in on initial load ── */
+
+@keyframes page-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-content {
+  animation: page-fade-in 0.5s ease-out forwards;
+}
+
+/* ── Image fade-in on load ── */
+
+@keyframes image-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+img.image-fade-in {
+  animation: image-fade-in 0.6s ease-out forwards;
+}
+
+/* ── Body defaults ── */
+
 body {
   margin: 0;
   padding: 0;
@@ -30,6 +91,24 @@ body {
   color: var(--body);
   font-family: var(--font-sans);
 }
+
+/* ── Interactive element transitions ── */
+
+button,
+a {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+a:active {
+  opacity: 0.8;
+}
+
+/* ── Existing animations ── */
 
 @keyframes fade-up {
   0% {
@@ -124,10 +203,27 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
   .animate-reveal-fade-up,
   .animate-reveal-fade-in,
   .animate-reveal-slide-left,
   .animate-reveal-slide-right {
+    animation: none;
+    opacity: 1;
+  }
+
+  .page-loader {
+    display: none;
+  }
+
+  .page-content {
     animation: none;
     opacity: 1;
   }

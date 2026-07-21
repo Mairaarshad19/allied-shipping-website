@@ -73,13 +73,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <div className="page-loader" />
         <JsonLd />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
-          <BackToTop />
-          <FloatingWhatsApp />
+        <div className="page-content">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+            <BackToTop />
+            <FloatingWhatsApp />
+          </div>
         </div>
       </body>
     </html>

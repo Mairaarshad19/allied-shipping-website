@@ -18,7 +18,7 @@ export default function AboutPreview() {
                 src="/images/containerImage.jpg"
                 alt="Shipping containers at port — Allied Shipping Agency"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="image-fade-in object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-navy-primary/15 to-navy-primary/10" />

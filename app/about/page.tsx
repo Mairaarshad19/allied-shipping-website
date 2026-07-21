@@ -50,7 +50,7 @@ export default function AboutPage() {
                 src="/images/containerImage.jpg"
                 alt="Shipping operations — Allied Shipping Agency"
                 fill
-                className="object-cover"
+                className="image-fade-in object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-navy-primary/15 to-navy-primary/10" />
