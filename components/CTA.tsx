@@ -48,7 +48,7 @@ export default function CTA() {
               const Icon = contact.icon;
 
               const cardContent = (
-                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 sm:px-5 py-6 sm:py-7 transition-all duration-200 hover:bg-white/10 hover:shadow-lg">
+                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 sm:px-6 py-6 sm:py-7 transition-all duration-200 hover:bg-white/10 hover:shadow-lg">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/10 shrink-0">
                     <Icon className="h-6 w-6 text-gold" strokeWidth={1.5} />
                   </div>

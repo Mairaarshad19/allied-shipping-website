@@ -57,14 +57,14 @@ export default function WhyChooseUs() {
                 type="fade-up"
                 delay={index * 100}
               >
-                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-white px-4 sm:px-5 py-4 sm:py-5 shadow-sm transition-shadow duration-200 hover:shadow-md h-full">
+                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-white px-5 sm:px-6 py-6 sm:py-7 shadow-sm transition-shadow duration-200 hover:shadow-md h-full">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
                     <Icon
                       className="h-5 w-5 text-navy-primary"
                       strokeWidth={1.5}
                     />
                   </div>
-                  <div className="pt-0.5 min-w-0">
+                  <div className="min-w-0">
                     <h3 className="text-base font-semibold text-heading break-words">
                       {feature.title}
                     </h3>

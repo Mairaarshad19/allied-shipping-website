@@ -38,7 +38,7 @@ export default function VisionMission() {
                       strokeWidth={1.5}
                     />
                   </div>
-                  <div className="pt-0.5 min-w-0">
+                  <div className="min-w-0">
                     <h3 className="text-lg font-semibold text-heading">
                       Vision
                     </h3>
@@ -63,7 +63,7 @@ export default function VisionMission() {
                       strokeWidth={1.5}
                     />
                   </div>
-                  <div className="pt-0.5 min-w-0">
+                  <div className="min-w-0">
                     <h3 className="text-lg font-semibold text-heading">
                       Mission
                     </h3>
