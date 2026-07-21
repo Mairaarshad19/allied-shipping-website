@@ -115,7 +115,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://wa.me/92004018802"
+              href="https://wa.me/923004018802"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
@@ -125,7 +125,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:arshad.alliedpk@gmail.com"
+              href="mailto:arshad@alliedshippingpk.com"
               className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
             >
               <Mail className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />

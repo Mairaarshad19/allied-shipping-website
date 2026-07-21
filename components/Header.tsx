@@ -82,7 +82,7 @@ export default function Header() {
               Call
             </a>
             <a
-              href="https://wa.me/923286920284"
+              href="https://wa.me/923004018802"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-navy-primary px-4 py-2 text-sm font-medium text-white transition-all hover:bg-navy-secondary"
@@ -142,13 +142,13 @@ export default function Header() {
                 042-36293017
               </a>
               <a
-                href="https://wa.me/923286920284"
+              href="https://wa.me/923004018802"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-navy-primary min-h-[48px] px-4 text-sm font-medium text-white transition-colors hover:bg-navy-secondary"
               >
                 <MessageCircle size={18} />
-                0328-6920284
+                0300-4018802
               </a>
             </div>
           </Container>

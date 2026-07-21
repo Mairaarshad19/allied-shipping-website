@@ -26,8 +26,8 @@ const CONTACT_ITEMS = [
   {
     icon: Smartphone,
     label: "Mobile",
-    value: "0328-6920284",
-    href: "tel:03286920284",
+    value: "0300-4018802",
+    href: "tel:03004018802",
   },
   {
     icon: MessageCircle,
@@ -38,8 +38,8 @@ const CONTACT_ITEMS = [
   {
     icon: Mail,
     label: "Email",
-    value: "docs@alliedshippingpk.com",
-    href: "mailto:docs@alliedshippingpk.com",
+    value: "arshad@alliedshippingpk.com",
+    href: "mailto:arshad@alliedshippingpk.com",
   },
 ];
 
