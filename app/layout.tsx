@@ -12,7 +12,10 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 });
 
+const siteUrl = "https://alliedshippingpk.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Allied Shipping Agency | Freight Forwarding & Cargo Booking in Pakistan",
   description:
     "Allied Shipping Agency is a Lahore-based freight forwarding and cargo booking agency with 25+ years of experience in sea freight (FCL/LCL), air freight, and export documentation.",
@@ -28,6 +31,37 @@ export const metadata: Metadata = {
     "Lahore Logistics",
   ],
   authors: [{ name: "Allied Shipping Agency" }],
+  openGraph: {
+    title: "Allied Shipping Agency | Freight Forwarding & Cargo Booking in Pakistan",
+    description:
+      "Allied Shipping Agency is a Lahore-based freight forwarding and cargo booking agency with 25+ years of experience in sea freight (FCL/LCL), air freight, and export documentation.",
+    url: siteUrl,
+    siteName: "Allied Shipping Agency",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/images/HeroImage.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Allied Shipping Agency - Freight Forwarding & Cargo Booking in Pakistan",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Allied Shipping Agency | Freight Forwarding & Cargo Booking in Pakistan",
+    description:
+      "Allied Shipping Agency is a Lahore-based freight forwarding and cargo booking agency with 25+ years of experience in sea freight (FCL/LCL), air freight, and export documentation.",
+    images: ["/images/HeroImage.jpg"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png" }],
+  },
 };
 
 export default function RootLayout({
