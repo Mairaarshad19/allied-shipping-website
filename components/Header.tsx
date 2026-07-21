@@ -6,11 +6,22 @@ import { Phone, MessageCircle, Menu, X } from "lucide-react";
 import Container from "./Container";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", sectionId: "home" },
+  { label: "About", sectionId: "about" },
+  { label: "Services", sectionId: "services" },
+  { label: "Contact", sectionId: "cta-section" },
 ];
+
+function scrollToSection(sectionId: string) {
+  if (sectionId === "home") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  const el = document.getElementById(sectionId);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,25 +46,30 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg shadow-black/5">
       <Container className="flex items-center justify-between py-3 md:py-4">
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-lg sm:text-xl font-semibold tracking-tight truncate max-w-[55vw] sm:max-w-none text-navy-primary"
+        <button
+          type="button"
+          onClick={() => scrollToSection("home")}
+          className="text-lg sm:text-xl font-semibold tracking-tight truncate max-w-[55vw] sm:max-w-none text-navy-primary text-left"
           aria-label="Allied Shipping Agency — Home"
         >
           Allied Shipping Agency
-        </Link>
+        </button>
 
         {/* Desktop nav + buttons */}
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-body hover:text-navy-primary transition-colors"
+              <button
+                key={link.sectionId}
+                type="button"
+                onClick={() => {
+                  scrollToSection(link.sectionId);
+                  closeMenu();
+                }}
+                className="text-sm font-medium text-body hover:text-navy-primary transition-colors cursor-pointer"
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -102,14 +118,17 @@ export default function Header() {
             {/* Navigation links */}
             <nav className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={closeMenu}
-                  className="flex items-center min-h-[44px] text-base font-medium text-body transition-colors hover:text-navy-primary rounded-lg px-3 -mx-3 hover:bg-beige-warm/60"
+                <button
+                  key={link.sectionId}
+                  type="button"
+                  onClick={() => {
+                    scrollToSection(link.sectionId);
+                    closeMenu();
+                  }}
+                  className="flex items-center min-h-[44px] w-full text-left text-base font-medium text-body transition-colors hover:text-navy-primary rounded-lg px-3 -mx-3 hover:bg-beige-warm/60 cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </button>
               ))}
             </nav>
 

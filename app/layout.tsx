@@ -13,8 +13,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Allied Shipping Agency",
-  description: "Freight Forwarding & Cargo Booking Agency in Pakistan",
+  title: "Allied Shipping Agency | Freight Forwarding & Cargo Booking in Pakistan",
+  description:
+    "Allied Shipping Agency is a Lahore-based freight forwarding and cargo booking agency with 25+ years of experience in sea freight (FCL/LCL), air freight, and export documentation.",
+  keywords: [
+    "Freight Forwarding Pakistan",
+    "Cargo Booking",
+    "Sea Freight",
+    "Air Freight",
+    "FCL",
+    "LCL",
+    "Export Documentation",
+    "Allied Shipping Agency",
+    "Lahore Logistics",
+  ],
+  authors: [{ name: "Allied Shipping Agency" }],
 };
 
 export default function RootLayout({

@@ -7,9 +7,7 @@ const SERVICES = [
     icon: Anchor,
     title: "Sea Freight",
     description:
-      "Full Container Load (FCL) and Less than Container Load (LCL) cargo booking from Karachi Port and Port Qasim to major international ports with competitive freight solutions.",
-    link: "#",
-    linkLabel: "Get Sea Freight Rate →",
+      "FCL and LCL cargo booking from Karachi Port and Port Qasim to major international ports with competitive freight solutions.",
   },
   {
     icon: Plane,
@@ -39,7 +37,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section className="bg-white pb-10 sm:pb-16 lg:pb-20 pt-6 sm:pt-12 lg:pt-14">
+    <section id="services" className="bg-white pb-10 sm:pb-16 lg:pb-20 pt-6 sm:pt-12 lg:pt-14">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">
@@ -65,7 +63,7 @@ export default function Services() {
                 type="fade-up"
                 delay={index * 100}
               >
-                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-white px-4 sm:px-5 py-4 sm:py-5 shadow-sm transition-shadow duration-200 hover:shadow-md">
+                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-white px-4 sm:px-5 py-4 sm:py-5 shadow-sm transition-shadow duration-200 hover:shadow-md h-full">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-primary/5">
                     <Icon
                       className="h-5 w-5 text-navy-primary"
@@ -79,14 +77,6 @@ export default function Services() {
                     <p className="mt-1 text-sm text-body leading-relaxed break-words">
                       {service.description}
                     </p>
-                    {service.link && (
-                      <a
-                        href={service.link}
-                        className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-gold transition-colors hover:text-gold/80"
-                      >
-                        {service.linkLabel}
-                      </a>
-                    )}
                   </div>
                 </div>
               </Reveal>

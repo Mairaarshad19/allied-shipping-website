@@ -19,8 +19,8 @@ const CONTACTS = [
   {
     icon: Mail,
     label: "Email",
-    value: "arshad.alliedpk@gmail.com",
-    href: "mailto:arshad.alliedpk@gmail.com",
+    value: "arshad@alliedshippingpk.com",
+    href: "mailto:arshad@alliedshippingpk.com",
   },
 ];
 

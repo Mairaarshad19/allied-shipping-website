@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen min-h-[560px] md:min-h-[600px] overflow-hidden pt-16 md:pt-20">
+    <section id="home" className="relative h-screen min-h-[560px] md:min-h-[600px] overflow-hidden pt-16 md:pt-20">
       {/* Background image */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center"

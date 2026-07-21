@@ -1,20 +1,32 @@
-import Link from "next/link";
+"use client";
+
 import { MapPin, Phone, MessageCircle, Mail } from "lucide-react";
 import Container from "./Container";
 
 const QUICK_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", sectionId: "home" },
+  { label: "About", sectionId: "about" },
+  { label: "Services", sectionId: "services" },
+  { label: "Contact", sectionId: "cta-section" },
 ];
 
 const SERVICES = [
-  { label: "Sea Freight", href: "#" },
-  { label: "Air Freight", href: "#" },
-  { label: "FCL & LCL", href: "#" },
-  { label: "Documentation", href: "#" },
+  { label: "Sea Freight", sectionId: "services" },
+  { label: "Air Freight", sectionId: "services" },
+  { label: "FCL & LCL", sectionId: "services" },
+  { label: "Documentation", sectionId: "services" },
 ];
+
+function scrollToSection(sectionId: string) {
+  if (sectionId === "home") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  const el = document.getElementById(sectionId);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,12 +38,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {/* Column 1 — Brand */}
           <div className="flex flex-col gap-3 sm:gap-4">
-            <Link
-              href="/"
-              className="text-xl font-semibold tracking-tight text-white"
+            <button
+              type="button"
+              onClick={() => scrollToSection("home")}
+              className="text-xl font-semibold tracking-tight text-white text-left"
             >
               Allied Shipping Agency
-            </Link>
+            </button>
             <p className="text-sm leading-relaxed text-white/60 break-words">
               Trusted freight forwarding and cargo booking agency based in
               Lahore, Pakistan — serving exporters and importers worldwide.
@@ -45,13 +58,14 @@ export default function Footer() {
             </h3>
             <nav className="flex flex-col gap-2 sm:gap-3">
               {QUICK_LINKS.map((link) => (
-                <Link
+                <button
                   key={link.label}
-                  href={link.href}
-                  className="text-sm text-white/60 transition-colors hover:text-white"
+                  type="button"
+                  onClick={() => scrollToSection(link.sectionId)}
+                  className="text-sm text-white/60 transition-colors hover:text-white text-left cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </button>
               ))}
             </nav>
           </div>
@@ -63,13 +77,14 @@ export default function Footer() {
             </h3>
             <nav className="flex flex-col gap-2 sm:gap-3">
               {SERVICES.map((service) => (
-                <Link
+                <button
                   key={service.label}
-                  href={service.href}
-                  className="text-sm text-white/60 transition-colors hover:text-white"
+                  type="button"
+                  onClick={() => scrollToSection(service.sectionId)}
+                  className="text-sm text-white/60 transition-colors hover:text-white text-left cursor-pointer"
                 >
                   {service.label}
-                </Link>
+                </button>
               ))}
             </nav>
           </div>
@@ -87,7 +102,7 @@ export default function Footer() {
                 <br />
                 Near Divine Hotel,
                 <br />
-                Davis Road, Lahore
+                8 - Davis Road, Lahore
               </span>
             </div>
 
@@ -114,7 +129,7 @@ export default function Footer() {
               className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
             >
               <Mail className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />
-              <span className="break-all">arshad.alliedpk@gmail.com</span>
+              <span className="break-all">arshad@alliedshippingpk.com</span>
             </a>
           </div>
         </div>

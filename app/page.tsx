@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import AboutPreview from "@/components/AboutPreview";
 import VisionMission from "@/components/VisionMission";
 import CTA from "@/components/CTA";
+import GoogleMaps from "@/components/GoogleMaps";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <AboutPreview />
       <VisionMission />
       <CTA />
+      <GoogleMaps />
     </>
   );
 }

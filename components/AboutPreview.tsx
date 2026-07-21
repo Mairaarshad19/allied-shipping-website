@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -6,7 +8,7 @@ import Reveal from "./Reveal";
 
 export default function AboutPreview() {
   return (
-    <section className="bg-beige-warm py-10 sm:py-16 lg:py-20">
+    <section id="about" className="bg-beige-warm py-10 sm:py-16 lg:py-20">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 items-center">
           {/* Left — real image with subtle navy overlay */}
@@ -44,13 +46,17 @@ export default function AboutPreview() {
               </p>
 
               <div className="pt-1">
-                <Link
-                  href="/about"
+                <button
+                  type="button"
+                  onClick={() => {
+                    const el = document.getElementById("about");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
                   className="inline-flex items-center gap-2.5 rounded-lg bg-navy-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-all hover:bg-navy-secondary hover:shadow-md"
                 >
                   Learn More
                   <ArrowRight size={18} />
-                </Link>
+                </button>
               </div>
             </div>
           </Reveal>
