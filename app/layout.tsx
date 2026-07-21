@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BackToTop from "@/components/BackToTop";
+import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -72,6 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <JsonLd />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
