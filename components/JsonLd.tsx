@@ -9,6 +9,11 @@ const jsonLd = {
     "+92 300 4018802",
   ],
   email: "arshad@alliedshippingpk.com",
+  founder: {
+    "@type": "Person",
+    name: "Muhammad Arshad",
+    jobTitle: "Owner",
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "Room #3, 1st Floor, Rafiq Plaza, Near Divine Hotel, 8 - Davis Road",
