@@ -37,7 +37,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white pb-10 sm:pb-16 lg:pb-20 pt-6 sm:pt-12 lg:pt-14">
+    <section id="services" className="bg-white py-10 sm:py-16 lg:py-20">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">

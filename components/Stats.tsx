@@ -27,7 +27,7 @@ const STATS = [
 
 export default function Stats() {
   return (
-    <section className="bg-white">
+    <section className="bg-white py-10 sm:py-16 lg:py-20">
       {/* Visual divider */}
       <div className="mx-auto w-px h-8 sm:h-10 bg-gradient-to-b from-transparent via-border to-transparent" />
 

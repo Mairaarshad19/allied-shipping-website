@@ -46,17 +46,13 @@ export default function AboutPreview() {
               </p>
 
               <div className="pt-1">
-                <button
-                  type="button"
-                  onClick={() => {
-                    const el = document.getElementById("about");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
+                <Link
+                  href="/about"
                   className="inline-flex items-center gap-2.5 rounded-xl bg-navy-primary px-6 py-3 text-sm font-medium text-white shadow-sm transition-all hover:bg-navy-secondary hover:shadow-md"
                 >
                   Learn More
                   <ArrowRight size={18} />
-                </button>
+                </Link>
               </div>
             </div>
           </Reveal>

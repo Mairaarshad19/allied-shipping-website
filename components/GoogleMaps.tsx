@@ -26,20 +26,20 @@ const CONTACT_ITEMS = [
   {
     icon: Smartphone,
     label: "Mobile",
-    value: "0300-4018802",
-    href: "tel:03004018802",
+    value: "0328-6920284",
+    href: "tel:+923286920284",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "0300-4018802",
-    href: "https://wa.me/923004018802?text=Hello%20Allied%20Shipping%20Agency,%20I%20would%20like%20to%20know%20more%20about%20your%20freight%20forwarding%20services.",
+    value: "0328-6920284",
+    href: "https://wa.me/923286920284?text=Hello%20Allied%20Shipping%20Agency,%20I%20would%20like%20to%20know%20more%20about%20your%20freight%20forwarding%20services.",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "arshad@alliedshippingpk.com",
-    href: "mailto:arshad@alliedshippingpk.com",
+    value: "docs@alliedshippingpk.com",
+    href: "mailto:docs@alliedshippingpk.com",
   },
 ];
 
@@ -51,7 +51,7 @@ const GOOGLE_MAPS_DIRECTIONS_URL =
 
 export default function GoogleMaps() {
   return (
-    <section className="bg-white py-16 md:py-24 lg:py-28">
+    <section className="bg-white py-10 sm:py-16 lg:py-20">
       <Container>
         {/* Header */}
         <Reveal>
