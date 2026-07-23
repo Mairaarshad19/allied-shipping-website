@@ -115,21 +115,21 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://wa.me/923004018802"
+              href="https://wa.me/923286920284"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
             >
               <MessageCircle className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />
-              0300-4018802
+              0328-6920284
             </a>
 
             <a
-              href="mailto:arshad@alliedshippingpk.com"
+              href="mailto:docs@alliedshippingpk.com"
               className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
             >
               <Mail className="h-4 w-4 shrink-0 text-gold" strokeWidth={1.5} />
-              <span className="break-all">arshad@alliedshippingpk.com</span>
+              <span className="break-all">docs@alliedshippingpk.com</span>
             </a>
           </div>
         </div>

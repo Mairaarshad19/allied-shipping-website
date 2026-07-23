@@ -75,14 +75,14 @@ export default function Header() {
 
           <div className="flex items-center gap-3 pl-8 border-l border-border">
             <a
-              href="tel:04236293017"
+              href="tel:+923286920284"
               className="inline-flex items-center gap-2 rounded-xl border border-navy-primary px-4 py-2 text-sm font-medium text-navy-primary transition-all hover:bg-navy-primary hover:text-white"
             >
               <Phone size={16} />
               Call
             </a>
             <a
-              href="https://wa.me/923004018802"
+              href="https://wa.me/923286920284"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl bg-navy-primary px-4 py-2 text-sm font-medium text-white transition-all hover:bg-navy-secondary"
@@ -135,20 +135,20 @@ export default function Header() {
             {/* Contact buttons */}
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
               <a
-                href="tel:04236293017"
+                href="tel:+923286920284"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-navy-primary min-h-[48px] px-4 text-sm font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"
               >
                 <Phone size={18} />
-                042-36293017
+                0328-6920284
               </a>
               <a
-                href="https://wa.me/923004018802"
+                href="https://wa.me/923286920284"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-navy-primary min-h-[48px] px-4 text-sm font-medium text-white transition-colors hover:bg-navy-secondary"
               >
                 <MessageCircle size={18} />
-                0300-4018802
+                0328-6920284
               </a>
             </div>
           </Container>

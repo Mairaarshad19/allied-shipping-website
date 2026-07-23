@@ -12,15 +12,15 @@ const CONTACTS = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "0300-4018802",
-    href: "https://wa.me/923004018802",
+    value: "0328-6920284",
+    href: "https://wa.me/923286920284",
     external: true,
   },
   {
     icon: Mail,
     label: "Email",
-    value: "arshad@alliedshippingpk.com",
-    href: "mailto:arshad@alliedshippingpk.com",
+    value: "docs@alliedshippingpk.com",
+    href: "mailto:docs@alliedshippingpk.com",
   },
 ];
 
