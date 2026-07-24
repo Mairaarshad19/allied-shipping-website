@@ -32,7 +32,7 @@ export default function Stats() {
       <div className="mx-auto w-px h-8 sm:h-10 bg-gradient-to-b from-transparent via-border to-transparent" />
 
       <Container className="mt-8 sm:mt-12 md:mt-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {STATS.map((stat, index) => {
             const Icon = stat.icon;
 
@@ -42,12 +42,24 @@ export default function Stats() {
                 type="fade-up"
                 delay={index * 100}
               >
-                <div className="flex flex-col items-center text-center gap-2 rounded-xl border border-border bg-white px-5 sm:px-6 py-6 sm:py-8 shadow-lg shadow-black/5 transition-shadow duration-200 hover:shadow-xl h-full">
-                  <Icon className="h-6 w-6 text-navy-primary" strokeWidth={1.5} />
-                  <span className="text-xl md:text-2xl font-semibold leading-tight text-heading break-words">
+                <div className="relative flex flex-col items-center text-center gap-3 rounded-xl border border-border bg-white px-6 sm:px-8 py-8 sm:py-10 shadow-lg shadow-black/5 transition-shadow duration-200 hover:shadow-xl h-full overflow-hidden">
+                  {/* Gold top accent bar */}
+                  <div className="absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent" />
+
+                  {/* Icon with gold-tinted background */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold/10 to-gold/5 ring-1 ring-gold/20">
+                    <Icon className="h-6 w-6 text-gold" strokeWidth={1.5} />
+                  </div>
+
+                  {/* Number — large and bold */}
+                  <span className="text-2xl md:text-3xl font-bold leading-tight text-navy-primary break-words">
                     {stat.title}
                   </span>
-                  <span className="text-xs text-body break-words">{stat.description}</span>
+
+                  {/* Label — subtle and smaller */}
+                  <span className="text-sm text-body/70 break-words leading-snug">
+                    {stat.description}
+                  </span>
                 </div>
               </Reveal>
             );
