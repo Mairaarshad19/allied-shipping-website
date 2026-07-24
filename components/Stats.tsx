@@ -31,7 +31,7 @@ export default function Stats() {
       {/* Visual divider */}
       <div className="mx-auto w-px h-8 sm:h-10 bg-gradient-to-b from-transparent via-border to-transparent" />
 
-      <Container className="mt-8 sm:mt-12 md:mt-16">
+      <Container className="mt-6 sm:mt-8 md:mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {STATS.map((stat, index) => {
             const Icon = stat.icon;

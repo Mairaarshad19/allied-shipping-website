@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function VisionMission() {
   return (
-    <section className="bg-beige-warm py-10 sm:py-16 lg:py-20">
+    <section className="bg-beige-warm py-6 sm:py-10 lg:py-14">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 items-start">
           {/* Left — text */}

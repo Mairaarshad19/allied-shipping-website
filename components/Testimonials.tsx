@@ -21,7 +21,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-10 sm:py-16 lg:py-20">
+    <section className="bg-white py-6 sm:py-10 lg:py-14">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">
