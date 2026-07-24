@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 export default function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/923286920284"
+      href="https://wa.me/923004018802"
       target="_blank"
       rel="noopener noreferrer"
       className="relative group"
