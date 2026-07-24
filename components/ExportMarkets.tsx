@@ -1,31 +1,27 @@
-import { Globe, Ship, MapPin } from "lucide-react";
+import { Globe, Building, MapPin, Ship } from "lucide-react";
 import Container from "./Container";
 import Reveal from "./Reveal";
 
 const MARKETS = [
   {
-    icon: Ship,
-    title: "Port Klang",
-    description: "Malaysia's premier port with reliable connections.",
-    highlighted: false,
+    icon: Globe,
+    title: "China",
+    description: "Major trade lanes connecting Pakistan with Chinese ports.",
+  },
+  {
+    icon: Building,
+    title: "Dubai",
+    description: "Strategic hub for transshipment and Middle East cargo.",
   },
   {
     icon: MapPin,
-    title: "Penang",
-    description: "North Malaysia gateway for efficient cargo handling.",
-    highlighted: false,
+    title: "UAE",
+    description: "Frequent sailings to UAE ports with reliable schedules.",
   },
   {
-    icon: Globe,
-    title: "UAE Sector",
-    description: "Dubai and UAE ports with frequent sailings.",
-    highlighted: false,
-  },
-  {
-    icon: Globe,
-    title: "China & Far East",
-    description: "Major Asian trade lanes with competitive rates.",
-    highlighted: false,
+    icon: Ship,
+    title: "Malaysia",
+    description: "Regular services to Malaysian ports for Southeast Asia trade.",
   },
 ];
 
@@ -57,28 +53,12 @@ export default function ExportMarkets() {
                 type="fade-up"
                 delay={index * 100}
               >
-                <div
-                  className={`group flex flex-col items-center text-center gap-3 rounded-xl px-4 sm:px-5 py-6 sm:py-8 shadow-sm transition-all duration-200 hover:shadow-md h-full ${
-                    market.highlighted
-                      ? "border-2 border-gold/60 bg-white"
-                      : "border border-border bg-white"
-                  }`}
-                >
-                  <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-full shrink-0 ${
-                      market.highlighted
-                        ? "bg-gold/10 text-gold"
-                        : "bg-navy-primary/5 text-navy-primary"
-                    }`}
-                  >
+                <div className="group flex flex-col items-center text-center gap-3 rounded-xl border border-border bg-white px-4 sm:px-5 py-6 sm:py-8 shadow-sm transition-all duration-200 hover:shadow-md h-full">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-navy-primary/5 text-navy-primary shrink-0">
                     <Icon className="h-5 w-5" strokeWidth={1.5} />
                   </div>
 
-                  <span
-                    className={`text-lg font-semibold leading-tight break-words ${
-                      market.highlighted ? "text-gold" : "text-heading"
-                    }`}
-                  >
+                  <span className="text-lg font-semibold leading-tight break-words text-heading">
                     {market.title}
                   </span>
 
