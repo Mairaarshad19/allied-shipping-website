@@ -1,4 +1,4 @@
-import { Anchor, Plane, FileText, ClipboardCheck, RefreshCw } from "lucide-react";
+import { Anchor, Plane, Truck, FileText } from "lucide-react";
 import Container from "./Container";
 import Reveal from "./Reveal";
 
@@ -16,22 +16,16 @@ const SERVICES = [
       "Fast, secure and time-sensitive air cargo booking for urgent import and export shipments through trusted airline partners.",
   },
   {
+    icon: Truck,
+    title: "Truck Freight / Supply Chain Solutions",
+    description:
+      "Reliable overland freight and end-to-end supply chain solutions for domestic and cross-border cargo movement.",
+  },
+  {
     icon: FileText,
-    title: "Documentation",
+    title: "Export Documentation",
     description:
-      "Professional preparation and handling of Bills of Lading, Certificates of Origin, commercial documents and shipping paperwork.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Cargo Booking",
-    description:
-      "Reliable cargo booking through a trusted global partner network with competitive rates and dependable sailing schedules.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Import & Export",
-    description:
-      "Reliable import and export cargo booking solutions connecting Pakistan with international markets.",
+      "Professional preparation of Bills of Lading, Certificates of Origin, and all commercial shipping paperwork.",
   },
 ];
 
