@@ -1,4 +1,4 @@
-import { MapPin, Phone, Smartphone, MessageCircle, Mail, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Smartphone, Mail, ExternalLink } from "lucide-react";
 import Container from "./Container";
 import Reveal from "./Reveal";
 
@@ -12,34 +12,35 @@ const CONTACT_ITEMS = [
         <br />
         Rafiq Plaza (Near Divine Hotel),
         <br />
-        Davis Road, Lahore
+        8 - Davis Road, Lahore
       </>
     ),
     href: null,
   },
   {
+    icon: Smartphone,
+    label: "Mobile & WhatsApp",
+    value: "+92 300 401 8802",
+    href: "tel:+923004018802",
+  },
+  {
+    icon: Smartphone,
+    label: "WhatsApp",
+    value: "+92 300 401 8802",
+    href: "https://wa.me/923004018802",
+    external: true,
+  },
+  {
     icon: Phone,
-    label: "Phone",
+    label: "PTCL",
     value: "042-36293017",
     href: "tel:04236293017",
   },
   {
-    icon: Smartphone,
-    label: "Mobile",
-    value: "0328-6920284",
-    href: "tel:+923286920284",
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "0328-6920284",
-    href: "https://wa.me/923286920284?text=Hello%20Allied%20Shipping%20Agency,%20I%20would%20like%20to%20know%20more%20about%20your%20freight%20forwarding%20services.",
-  },
-  {
     icon: Mail,
     label: "Email",
-    value: "docs@alliedshippingpk.com",
-    href: "mailto:docs@alliedshippingpk.com",
+    value: "arshad@alliedshippingpk.com",
+    href: "mailto:arshad@alliedshippingpk.com",
   },
 ];
 
@@ -70,10 +71,10 @@ export default function GoogleMaps() {
         </Reveal>
 
         {/* Two-column layout — 60/40 */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Left — Map (3/5 ≈ 60%) */}
           <Reveal type="slide-left" className="lg:col-span-3">
-            <div className="overflow-hidden rounded-[16px] shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+            <div className="overflow-hidden rounded-[16px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] h-full">
               <iframe
                 title="Allied Shipping Agency Office Location"
                 src={MAP_URL}
@@ -83,7 +84,7 @@ export default function GoogleMaps() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full"
+                className="w-full h-full min-h-[400px]"
               />
             </div>
           </Reveal>
@@ -91,7 +92,7 @@ export default function GoogleMaps() {
           {/* Right — Contact Card (2/5 ≈ 40%) */}
           <Reveal type="slide-right" delay={100} className="lg:col-span-2">
             <div
-              className="rounded-2xl border border-border px-8 py-10 shadow-sm"
+              className="rounded-2xl border border-border px-8 py-10 shadow-sm h-full"
               style={{ backgroundColor: "#FFFCF6" }}
             >
               <h3 className="text-xl font-semibold text-heading">
@@ -104,6 +105,25 @@ export default function GoogleMaps() {
               <div className="mt-8 flex flex-col gap-6">
                 {CONTACT_ITEMS.map((item) => {
                   const Icon = item.icon;
+
+                  const content = (
+                    <>
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8DCC4] transition-colors group-hover:bg-[#DCCFB4]">
+                        <Icon
+                          className="h-5 w-5 text-navy-primary"
+                          strokeWidth={1.5}
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-body/60">
+                          {item.label}
+                        </p>
+                        <p className="mt-0.5 text-[15px] font-medium text-heading transition-colors group-hover:text-navy-primary break-words">
+                          {item.value}
+                        </p>
+                      </div>
+                    </>
+                  );
 
                   if (item.href) {
                     return (
@@ -118,22 +138,9 @@ export default function GoogleMaps() {
                             ? "noopener noreferrer"
                             : undefined
                         }
-                        className="flex items-start gap-4 transition-colors group"
+                        className="flex items-center gap-4 transition-colors group"
                       >
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8DCC4] transition-colors group-hover:bg-[#DCCFB4]">
-                          <Icon
-                            className="h-5 w-5 text-navy-primary"
-                            strokeWidth={1.5}
-                          />
-                        </div>
-                        <div className="min-w-0 pt-1">
-                          <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-body/60">
-                            {item.label}
-                          </p>
-                          <p className="mt-0.5 text-[15px] font-medium text-heading transition-colors group-hover:text-navy-primary break-words">
-                            {item.value}
-                          </p>
-                        </div>
+                        {content}
                       </a>
                     );
                   }
@@ -141,22 +148,9 @@ export default function GoogleMaps() {
                   return (
                     <div
                       key={item.label}
-                      className="flex items-start gap-4"
+                      className="flex items-center gap-4"
                     >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#E8DCC4]">
-                        <Icon
-                          className="h-5 w-5 text-navy-primary"
-                          strokeWidth={1.5}
-                        />
-                      </div>
-                      <div className="min-w-0 pt-1">
-                        <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-body/60">
-                          {item.label}
-                        </p>
-                        <p className="mt-0.5 text-[15px] font-medium text-heading break-words">
-                          {item.value}
-                        </p>
-                      </div>
+                      {content}
                     </div>
                   );
                 })}
