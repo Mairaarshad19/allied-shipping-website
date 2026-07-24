@@ -60,20 +60,20 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <Container className="flex items-center justify-between py-5 md:py-6">
+      <Container className="flex items-center justify-between py-6 md:py-7">
         {/* Logo — left */}
         <button
           type="button"
           onClick={() => scrollToSection("home")}
-          className="shrink-0"
+          className="shrink-0 mr-10 md:mr-16"
           aria-label="Allied Shipping Agency — Home"
         >
           <Image
             src="/images/logos.png"
             alt="Allied Shipping Agency"
-            width={220}
-            height={60}
-            className="h-[50px] md:h-[60px] w-auto object-contain"
+            width={280}
+            height={75}
+            className="h-[60px] md:h-[72px] w-auto object-contain"
             priority
           />
         </button>
