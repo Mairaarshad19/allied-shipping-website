@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Container from "./Container";
 
 const NAV_LINKS = [
@@ -60,27 +60,27 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <Container className="flex items-center justify-between py-4 md:py-5">
-        {/* Logo */}
+      <Container className="flex items-center justify-between py-5 md:py-6">
+        {/* Logo — left */}
         <button
           type="button"
           onClick={() => scrollToSection("home")}
-          className="shrink-0 mr-6"
+          className="shrink-0"
           aria-label="Allied Shipping Agency — Home"
         >
           <Image
-            src="/images/logo.jpeg"
+            src="/images/logos.png"
             alt="Allied Shipping Agency"
-            width={180}
-            height={50}
-            className="h-10 md:h-12 w-auto object-contain"
+            width={220}
+            height={60}
+            className="h-[50px] md:h-[60px] w-auto object-contain"
             priority
           />
         </button>
 
-        {/* Desktop nav + button */}
-        <div className="hidden md:flex items-center gap-10">
-          <nav className="flex items-center gap-10">
+        {/* Desktop nav — right */}
+        <div className="hidden md:flex items-center">
+          <nav className="flex items-center gap-10 md:gap-12">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.sectionId}
@@ -89,7 +89,7 @@ export default function Header() {
                   scrollToSection(link.sectionId);
                   closeMenu();
                 }}
-                className={`text-base font-medium transition-colors duration-200 cursor-pointer ${
+                className={`text-[15px] md:text-base font-medium transition-all duration-200 cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all after:duration-200 hover:after:w-full ${
                   scrolled
                     ? "text-body hover:text-navy-primary"
                     : "text-white/90 hover:text-white"
@@ -99,28 +99,6 @@ export default function Header() {
               </button>
             ))}
           </nav>
-
-          <div className="flex items-center gap-4 pl-8 border-l border-border">
-            <a
-              href="tel:+923004018802"
-              className={`inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 ${
-                scrolled
-                  ? "text-navy-primary hover:text-navy-secondary"
-                  : "text-white/90 hover:text-white"
-              }`}
-            >
-              <Phone size={16} />
-              +92 300 401 8802
-            </a>
-            <a
-              href="https://wa.me/923004018802"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-navy-primary px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#0D2A4F] hover:shadow-md"
-            >
-              Contact Us
-            </a>
-          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -157,31 +135,12 @@ export default function Header() {
                     scrollToSection(link.sectionId);
                     closeMenu();
                   }}
-                  className="flex items-center min-h-[44px] w-full text-left text-base font-medium text-body transition-colors hover:text-navy-primary rounded-lg px-3 -mx-3 hover:bg-beige-warm/60 cursor-pointer"
+                  className="flex items-center min-h-[44px] w-full text-left text-base font-medium text-body hover:text-navy-primary rounded-lg px-3 -mx-3 hover:bg-beige-warm/60 cursor-pointer"
                 >
                   {link.label}
                 </button>
               ))}
             </nav>
-
-            {/* Contact buttons */}
-            <div className="flex flex-col gap-3 pt-4 border-t border-border">
-              <a
-                href="tel:+923004018802"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-navy-primary min-h-[48px] px-4 text-sm font-medium text-navy-primary transition-colors hover:bg-navy-primary hover:text-white"
-              >
-                <Phone size={18} />
-                +92 300 401 8802
-              </a>
-              <a
-                href="https://wa.me/923004018802"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-navy-primary min-h-[48px] px-4 text-sm font-medium text-white transition-all duration-200 hover:bg-[#0D2A4F] hover:shadow-md"
-              >
-                Contact Us
-              </a>
-            </div>
           </Container>
         </div>
       </div>
