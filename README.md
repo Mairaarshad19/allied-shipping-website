@@ -45,24 +45,6 @@ styles/
 lib/
 ```
 
-## Services Covered
-
-- Sea Freight
-- Air Freight
-- Cargo Booking
-- Export Documentation
-- FCL (Full Container Load)
-- LCL (Less than Container Load)
-- Import & Export Logistics
-- Supply Chain Support
-
-## Business Highlights
-
-- 25+ Years of Experience
-- 200+ Shipments Per Year
-- 50+ Countries Served
-- Trusted Freight Partner in Pakistan
-
 ## SEO Features
 
 - Optimized page metadata
