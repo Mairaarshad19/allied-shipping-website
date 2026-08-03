@@ -108,14 +108,14 @@ export default function Header() {
               </button>
             ))}
           </nav>
-          {/* CTA button — compact */}
+          {/* CTA button — premium corporate */}
           <button
             type="button"
             onClick={() => scrollToSection("cta-section")}
-            className={`rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
+            className={`rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition-all duration-[250ms] ease-out hover:-translate-y-0.5 hover:bg-[#D4AF37] hover:text-white hover:shadow-lg hover:shadow-black/10 ${
               scrolled
-                ? "bg-navy-primary text-white hover:bg-navy-primary/90 hover:shadow-md"
-                : "bg-white text-navy-primary hover:bg-navy-primary hover:text-white"
+                ? "bg-navy-primary text-white shadow-md shadow-black/10"
+                : "bg-white text-navy-primary shadow-sm shadow-black/5"
             }`}
           >
             Get a Quote

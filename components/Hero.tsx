@@ -58,21 +58,6 @@ export default function Hero() {
               Trusted freight forwarding and cargo booking solutions connecting Pakistan with global markets through reliable sea and air freight.
             </motion.p>
 
-            {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: "easeOut", delay: 0.55 }}
-              className="mt-8 sm:mt-10 flex items-center"
-            >
-              <button
-                type="button"
-                onClick={scrollToCTA}
-                className="inline-flex items-center gap-2.5 rounded-xl bg-white px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-semibold text-navy-primary shadow-md transition-all duration-200 hover:bg-navy-primary hover:text-white hover:shadow-lg"
-              >
-                Contact Us
-              </button>
-            </motion.div>
           </div>
         </Container>
       </div>
