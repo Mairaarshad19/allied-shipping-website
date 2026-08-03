@@ -60,12 +60,16 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <Container className="flex items-center justify-between py-6 md:py-7">
+      <Container
+        className={`flex items-center justify-between transition-all duration-300 ${
+          scrolled ? "py-3.5 md:py-4" : "py-5 md:py-6"
+        }`}
+      >
         {/* Logo — left */}
         <button
           type="button"
           onClick={() => scrollToSection("home")}
-          className="shrink-0 mr-10 md:mr-16"
+          className="shrink-0 flex items-center"
           aria-label="Allied Shipping Agency — Home"
         >
           <Image
@@ -83,9 +87,9 @@ export default function Header() {
           />
         </button>
 
-        {/* Desktop nav — right */}
-        <div className="hidden md:flex items-center">
-          <nav className="flex items-center gap-10 md:gap-12">
+        {/* Desktop nav + CTA — right */}
+        <div className="hidden md:flex items-center gap-8 lg:gap-12">
+          <nav className="flex items-center gap-8 lg:gap-12">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.sectionId}
@@ -94,7 +98,7 @@ export default function Header() {
                   scrollToSection(link.sectionId);
                   closeMenu();
                 }}
-                className={`text-[15px] md:text-base font-medium transition-all duration-200 cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all after:duration-200 hover:after:w-full ${
+                className={`text-[15px] lg:text-base font-medium transition-all duration-200 cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all after:duration-200 hover:after:w-full ${
                   scrolled
                     ? "text-body hover:text-navy-primary"
                     : "text-white/90 hover:text-white"
@@ -104,6 +108,18 @@ export default function Header() {
               </button>
             ))}
           </nav>
+          {/* CTA button */}
+          <button
+            type="button"
+            onClick={() => scrollToSection("cta-section")}
+            className={`rounded-full px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
+              scrolled
+                ? "bg-navy-primary text-white hover:bg-navy-primary/90 hover:shadow-md"
+                : "bg-white text-navy-primary hover:bg-navy-primary hover:text-white"
+            }`}
+          >
+            Get a Quote
+          </button>
         </div>
 
         {/* Mobile hamburger */}
