@@ -62,10 +62,10 @@ export default function Header() {
     >
       <Container
         className={`flex items-center justify-between transition-all duration-300 ${
-          scrolled ? "py-3.5 md:py-4" : "py-5 md:py-6"
+          scrolled ? "py-2.5 md:py-3" : "py-4 md:py-5"
         }`}
       >
-        {/* Logo — left */}
+        {/* Logo — left, aligns with hero content via shared Container padding */}
         <button
           type="button"
           onClick={() => scrollToSection("home")}
@@ -88,8 +88,8 @@ export default function Header() {
         </button>
 
         {/* Desktop nav + CTA — right */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-12">
-          <nav className="flex items-center gap-8 lg:gap-12">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="flex items-center gap-9 lg:gap-10">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.sectionId}
@@ -108,11 +108,11 @@ export default function Header() {
               </button>
             ))}
           </nav>
-          {/* CTA button */}
+          {/* CTA button — compact */}
           <button
             type="button"
             onClick={() => scrollToSection("cta-section")}
-            className={`rounded-full px-5 py-2.5 text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
+            className={`rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
               scrolled
                 ? "bg-navy-primary text-white hover:bg-navy-primary/90 hover:shadow-md"
                 : "bg-white text-navy-primary hover:bg-navy-primary hover:text-white"
