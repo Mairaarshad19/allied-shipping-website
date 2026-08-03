@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { MapPin, Phone, MessageCircle, Mail } from "lucide-react";
 import Container from "./Container";
 
@@ -41,9 +42,17 @@ export default function Footer() {
             <button
               type="button"
               onClick={() => scrollToSection("home")}
-              className="text-xl font-semibold tracking-tight text-white text-left"
+              className="text-left"
+              aria-label="Allied Shipping Agency — Home"
             >
-              Allied Shipping Agency
+              <Image
+                src="/images/dark-back.png"
+                alt="Allied Shipping Agency"
+                width={200}
+                height={54}
+                className="h-[42px] sm:h-[50px] md:h-[56px] w-auto object-contain"
+                style={{ width: "auto", height: "auto" }}
+              />
             </button>
             <p className="text-sm leading-relaxed text-white/60 break-words">
               Trusted freight forwarding and cargo booking agency based in

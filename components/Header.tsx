@@ -69,11 +69,16 @@ export default function Header() {
           aria-label="Allied Shipping Agency — Home"
         >
           <Image
-            src="/images/logos.png"
+            src={
+              scrolled
+                ? "/images/white-back.png"
+                : "/images/dark-back.png"
+            }
             alt="Allied Shipping Agency"
             width={280}
             height={75}
-            className="h-[60px] md:h-[72px] w-auto object-contain"
+            className="h-[42px] sm:h-[50px] md:h-[56px] w-auto object-contain"
+            style={{ width: "auto", height: "auto" }}
             priority
           />
         </button>
