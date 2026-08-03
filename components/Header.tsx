@@ -79,8 +79,8 @@ export default function Header() {
                 : "/images/dark-back.png"
             }
             alt="Allied Shipping Agency"
-            width={280}
-            height={75}
+            width={467}
+            height={158}
             className="h-[42px] sm:h-[50px] md:h-[56px] w-auto object-contain"
             style={{ width: "auto", height: "auto" }}
             priority

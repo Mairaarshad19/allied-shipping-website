@@ -48,8 +48,8 @@ export default function Footer() {
               <Image
                 src="/images/dark-back.png"
                 alt="Allied Shipping Agency"
-                width={200}
-                height={54}
+                width={467}
+                height={158}
                 className="h-[42px] sm:h-[50px] md:h-[56px] w-auto object-contain"
                 style={{ width: "auto", height: "auto" }}
               />
