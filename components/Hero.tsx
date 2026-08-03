@@ -5,13 +5,6 @@ import { ChevronDown } from "lucide-react";
 import Container from "./Container";
 
 export default function Hero() {
-  const scrollToCTA = () => {
-    const el = document.getElementById("cta-section");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="home" className="relative h-screen min-h-[560px] md:min-h-[600px] overflow-hidden pt-16 md:pt-20">
       {/* Background image */}

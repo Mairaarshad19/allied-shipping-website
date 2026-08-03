@@ -1,36 +1,58 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { MapPin, Phone, MessageCircle, Mail } from "lucide-react";
 import Container from "./Container";
 
 const QUICK_LINKS = [
-  { label: "Home", sectionId: "home" },
-  { label: "About", sectionId: "about" },
-  { label: "Services", sectionId: "services" },
-  { label: "Contact", sectionId: "cta-section" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/#services" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const SERVICES = [
-  { label: "Sea Freight", sectionId: "services" },
-  { label: "Air Freight", sectionId: "services" },
-  { label: "FCL & LCL", sectionId: "services" },
-  { label: "Documentation", sectionId: "services" },
+  { label: "Sea Freight", href: "/#services" },
+  { label: "Air Freight", href: "/#services" },
+  { label: "FCL & LCL", href: "/#services" },
+  { label: "Documentation", href: "/#services" },
 ];
-
-function scrollToSection(sectionId: string) {
-  if (sectionId === "home") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    return;
-  }
-  const el = document.getElementById(sectionId);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
-  }
-}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavigate = (href: string) => {
+    // Same page with hash — smooth scroll
+    if (href.startsWith("/#")) {
+      const id = href.replace("/#", "");
+      if (pathname === "/") {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+      }
+      // On about page, navigate home then scroll
+      router.push(href);
+      return;
+    }
+
+    // Home link — scroll to top if on home, else navigate
+    if (href === "/") {
+      if (pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        router.push("/");
+      }
+      return;
+    }
+
+    // About link
+    router.push(href);
+  };
 
   return (
     <footer className="bg-navy-primary">
@@ -41,7 +63,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3 sm:gap-4">
             <button
               type="button"
-              onClick={() => scrollToSection("home")}
+              onClick={() => handleNavigate("/")}
               className="text-left"
               aria-label="Allied Shipping Agency — Home"
             >
@@ -70,7 +92,7 @@ export default function Footer() {
                 <button
                   key={link.label}
                   type="button"
-                  onClick={() => scrollToSection(link.sectionId)}
+                  onClick={() => handleNavigate(link.href)}
                   className="text-sm text-white/60 transition-colors hover:text-white text-left cursor-pointer"
                 >
                   {link.label}
@@ -89,7 +111,7 @@ export default function Footer() {
                 <button
                   key={service.label}
                   type="button"
-                  onClick={() => scrollToSection(service.sectionId)}
+                  onClick={() => handleNavigate(service.href)}
                   className="text-sm text-white/60 transition-colors hover:text-white text-left cursor-pointer"
                 >
                   {service.label}

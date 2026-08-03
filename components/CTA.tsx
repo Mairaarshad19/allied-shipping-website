@@ -26,7 +26,7 @@ const CONTACTS = [
 
 export default function CTA() {
   return (
-    <section id="cta-section" className="bg-navy-primary py-10 sm:py-16 lg:py-20">
+    <section id="contact" className="bg-navy-primary py-10 sm:py-16 lg:py-20">
       <Container>
         {/* Section header */}
         <Reveal type="fade-up">

@@ -2,30 +2,23 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Container from "./Container";
 
 const NAV_LINKS = [
-  { label: "Home", sectionId: "home" },
-  { label: "About", sectionId: "about" },
-  { label: "Services", sectionId: "services" },
-  { label: "Contact", sectionId: "cta-section" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/#services" },
+  { label: "Contact", href: "/#contact" },
 ];
-
-function scrollToSection(sectionId: string) {
-  if (sectionId === "home") {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    return;
-  }
-  const el = document.getElementById(sectionId);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
-  }
-}
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeHash, setActiveHash] = useState("");
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,8 +41,64 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  /* Track current hash and handle hash navigation after page load */
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    setActiveHash(hash);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [pathname]);
+
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const handleNavigate = (href: string) => {
+    closeMenu();
+
+    // Same page with hash — smooth scroll
+    if (href.startsWith("/#")) {
+      const id = href.replace("/#", "");
+      if (pathname === "/") {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+      }
+      // On about page, navigate home then scroll
+      router.push(href);
+      return;
+    }
+
+    // Home link — scroll to top if on home, else navigate
+    if (href === "/") {
+      if (pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        router.push("/");
+      }
+      return;
+    }
+
+    // About link
+    router.push(href);
+  };
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href === "/about") return pathname === "/about";
+    if (href.startsWith("/#")) {
+      const id = href.replace("/#", "");
+      return pathname === "/" && activeHash === id;
+    }
+    return false;
   };
 
   return (
@@ -68,7 +117,7 @@ export default function Header() {
         {/* Logo — left, aligns with hero content via shared Container padding */}
         <button
           type="button"
-          onClick={() => scrollToSection("home")}
+          onClick={() => handleNavigate("/")}
           className="shrink-0 flex items-center py-1.5"
           aria-label="Allied Shipping Agency — Home"
         >
@@ -92,16 +141,15 @@ export default function Header() {
           <nav className="flex items-center gap-9 lg:gap-10">
             {NAV_LINKS.map((link) => (
               <button
-                key={link.sectionId}
+                key={link.label}
                 type="button"
-                onClick={() => {
-                  scrollToSection(link.sectionId);
-                  closeMenu();
-                }}
+                onClick={() => handleNavigate(link.href)}
                 className={`text-[15px] lg:text-base font-medium transition-all duration-200 cursor-pointer relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all after:duration-200 hover:after:w-full ${
-                  scrolled
-                    ? "text-body hover:text-navy-primary"
-                    : "text-white/90 hover:text-white"
+                  isActive(link.href)
+                    ? "text-gold after:w-full"
+                    : scrolled
+                      ? "text-body hover:text-navy-primary"
+                      : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -111,7 +159,7 @@ export default function Header() {
           {/* CTA button — premium corporate */}
           <button
             type="button"
-            onClick={() => scrollToSection("cta-section")}
+            onClick={() => handleNavigate("/#contact")}
             className={`rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition-all duration-[250ms] ease-out hover:-translate-y-0.5 hover:bg-[#D4AF37] hover:text-white hover:shadow-lg hover:shadow-black/10 ${
               scrolled
                 ? "bg-navy-primary text-white shadow-md shadow-black/10"
@@ -150,13 +198,14 @@ export default function Header() {
             <nav className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
                 <button
-                  key={link.sectionId}
+                  key={link.label}
                   type="button"
-                  onClick={() => {
-                    scrollToSection(link.sectionId);
-                    closeMenu();
-                  }}
-                  className="flex items-center min-h-[44px] w-full text-left text-base font-medium text-body hover:text-navy-primary rounded-lg px-3 -mx-3 hover:bg-beige-warm/60 cursor-pointer"
+                  onClick={() => handleNavigate(link.href)}
+                  className={`flex items-center min-h-[44px] w-full text-left text-base font-medium rounded-lg px-3 -mx-3 hover:bg-beige-warm/60 cursor-pointer ${
+                    isActive(link.href)
+                      ? "text-gold font-semibold"
+                      : "text-body hover:text-navy-primary"
+                  }`}
                 >
                   {link.label}
                 </button>
