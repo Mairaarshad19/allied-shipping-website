@@ -69,7 +69,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => scrollToSection("home")}
-          className="shrink-0 flex items-center"
+          className="shrink-0 flex items-center py-1.5"
           aria-label="Allied Shipping Agency — Home"
         >
           <Image
@@ -81,7 +81,7 @@ export default function Header() {
             alt="Allied Shipping Agency"
             width={467}
             height={158}
-            className="h-[42px] sm:h-[50px] md:h-[56px] w-auto object-contain"
+            className="h-[38px] sm:h-[45px] md:h-[50px] w-auto object-contain"
             style={{ width: "auto", height: "auto" }}
             priority
           />

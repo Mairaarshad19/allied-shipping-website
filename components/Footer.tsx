@@ -50,7 +50,7 @@ export default function Footer() {
                 alt="Allied Shipping Agency"
                 width={467}
                 height={158}
-                className="h-[42px] sm:h-[50px] md:h-[56px] w-auto object-contain"
+                className="h-[38px] sm:h-[45px] md:h-[50px] w-auto object-contain"
                 style={{ width: "auto", height: "auto" }}
               />
             </button>
