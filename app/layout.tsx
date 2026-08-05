@@ -72,6 +72,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="Ov3CrwoPCEfqSimChXaicX8O_emT8Wq5qTuX-Ovqq4Y"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <div className="page-loader" />
         <JsonLd />
