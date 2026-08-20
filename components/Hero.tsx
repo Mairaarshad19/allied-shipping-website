@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background image */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/HeroImage.jpg)" }}
+        style={{ backgroundImage: "url(/images/hero/HeroImage.jpg)" }}
       />
 
       {/* Dark navy overlay for readability */}
